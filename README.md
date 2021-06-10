@@ -2,69 +2,38 @@
 
 ## Project Links
 
-- [Github Repo](https://github.com/taylorhughes291/project-2-329)
-- [Deployment Link](https://project-2-329-delta.vercel.app/)
+- [Github Repo](https://github.com/taylorhughes291/bullet-journal-frontend)
+- [Deployment Link](https://bullet-journal-frontend.vercel.app/)
 
 ## Project Description
 
-Users of this app are people who are buying gifts for other people and are having a hard time thinking of what to get. The user will be able to type in a budget and up tp three key phrases about the individual, and an API will be called to search for the items. The user will then be shown a list of 5 items in order of relevance to their search. This order of relevance will be dictated by an algorithm declared in my app.
+Users of this app are people who want to incorporate lifestyle changes in the form of staying organized and on top of their lives. This app will utilize the bullet journal system in a digital way. The user will be able to: 
+* See, add, update, and delete tasks and events for the current day; 
+* See, add, update, and delete tasks and events for the current week; 
+* See, add, update, and delete tasks and events for the current month in a calendar view;
+* See, add, update, and delete tasks and events in buckets divided up by month for the next year
+* See, add, update, and delete miscellaneous notepages
+* See a table of contents page of all pages
 
-The scope of this project will be for one-time use, i.e there will be no logging of searches or login for the application. It will be solely for layout purposes, API URL production and retrieval, ranking algorithm production, and end result. 
+The scope of this project will be limited to desktop view, and will be extended to mobile if time permits.
 
-The user will be able to increase the number of gift recipients to 3, and later post-MVP will be able to specify more than that.
+Post-MVP will be
+* Search capability on table of contents
+* JWT legit authentication
+* Pre-packaged task list (for trips, any kind of activity)
+* Drawing or photo capability
+* Ability to favorite pages for quick reference from home page
+* Progressive Web Application for download to mobile devices
 
 ## API
 
-For this project I will be using data from Rainforest API. Rainforest returns detailed Amazon Product Information based off of keyword searches. Rainforest allows up to 100 free API searches before charging $9 monthly for 500 API searches, so I will attempt to use the free version for now, developing with dummy data, before swapping the dummy data out for live API reference.
+There will not be any API drawn from for this project.
 
-Later, I will attempt to leverage Amazon Associates API, which requires an in-depth approval. For now, Rainforest will work really well. For the purposes of this exercise, I will not include shipping information because Rainforest does not offer that. 
+## Backend data
 
-Later, I plan on adding other API to this such as eBay, Google Shopping, WalMart, as well as shipping information since most gifts are purchased with a deadline in mind. For now, all of this is to be considered outside the scope of the project.
+This will be updated upon completion and further thought
 
-Sample data from a simple search of "Star Wars" is shown below. Please see file "starWarsData.js" for the detailed list of returned products.
-
-
-```
-{data: {
-    "request_info": {
-      "success": true,
-      "credits_used": 1,
-      "credits_remaining": 99,
-      "credits_used_this_request": 1
-    },
-    "request_metadata": {
-      "created_at": "2021-04-30T05:02:39.648Z",
-      "processed_at": "2021-04-30T05:02:42.742Z",
-      "total_time_taken": 3.09,
-      "amazon_url": "https://www.amazon.com/s/?k=star+wars&ref=nb_sb_noss_2&s=price-desc-rank"
-    },
-    "request_parameters": {
-      "type": "search",
-      "amazon_domain": "amazon.com",
-      "search_term": "star wars",
-      "sort_by": "price_high_to_low"
-    },
-    "search_results": [
-      {
-        "position": 1,
-        "title": "Battle In Space: The Armada Attacks",
-        "asin": "B08MSKDCVC",
-        "link": "https://www.amazon.com/dp/B08MSKDCVC",
-        "categories": [
-          {
-            "name": "All Departments",
-            "id": "search-alias=aps"
-          }
-        ],
-        "image": "https://m.media-amazon.com/images/I/81WqEUaD1iL._AC_UY218_.jpg",
-        "is_prime": false,
-        "is_amazon_fresh": false,
-        "is_whole_foods_market": false,
-        "rating": 2.5,
-        "ratings_total": 2,
-        "sponsored": false
-      }, }
-```
+## React Architecture
 
 
 ## Wireframes
