@@ -12,12 +12,13 @@ Users of this app are people who want to incorporate lifestyle changes in the fo
 * See, add, update, and delete tasks and events for the current week; 
 * See, add, update, and delete tasks and events for the current month in a calendar view;
 * See, add, update, and delete tasks and events in buckets divided up by month for the next year
-* See, add, update, and delete miscellaneous notepages
-* See a table of contents page of all pages
+
 
 The scope of this project will be limited to desktop view, and will be extended to mobile if time permits.
 
 Post-MVP will be
+* See, add, update, and delete miscellaneous notepages
+* See a table of contents page of all pages
 * Search capability on table of contents
 * JWT legit authentication
 * Pre-packaged task list (for trips, any kind of activity)
@@ -41,14 +42,10 @@ This will be updated upon completion and further thought
 Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe. Also, define the the React components and the architectural design of your app.
 
 #### MVP Documents
-- [Mobile Wireframes](https://imgur.com/a/CK1qOwD)
-- [Tablet Wireframes](https://imgur.com/a/WNlr4QJ)
-- [Desktop Wireframes](https://imgur.com/a/wuxvK07)
-- [React Architecture](https://imgur.com/a/ytuYQIR)
-
-#### Post-MVP Documents
-- [Mobile Wireframes](https://imgur.com/a/KW0jaar)
-- [React Architecture](https://imgur.com/a/luGiHaS)
+- [Mobile Wireframes](https://imgur.com/a/Ps2wUt7)
+- [Tablet Wireframes]()
+- [Desktop Wireframes]()
+- [React Architecture]()
 
 
 ### MVP/PostMVP - 5min
@@ -56,25 +53,20 @@ Upload images of wireframe to cloudinary and add the link here with a descriptio
 The functionality will then be divided into two separate lists: MPV and PostMVP.  I have carefully decided what is placed into your MVP and what can be implemented after.
 
 #### MVP
-- Find and use external api 
-- Render data on page 
-- Allow user to interact with the page
-- Allow user to use app for only 1 person
-- Send API to rainforest for each keyword, and combined keywords (total 6). API will also take budget pricing into account
-- onChange controlled inputs will be used, allowing keyword and product carousel to appear only once Person and Budget fields have content.
-- Suggest low cost items to fill budget once user has selected item(s)
-- Build ranking algorithm to suggest the most relevant products to the user
-- Show cart subtotal to user once Cart has been finalized
-- Serve product links to the user for easy purchase
+* Basic calendaring broken down by day, week, month, and year.
+* Basic tasking that can be set to calendar items
 
 #### PostMVP
 
-- Create new page for initializing a list
-- Enable user to select if the recipients are Small, Medium, or Large gifts and calculate budget per person based on that
-- Enable multiple "Recipient" cards on Keyword Builder page
-- Allow user to edit Person Name, Person Budget, Total Budget, List Name, Person Gift Size and update all state accordingly
-- Allow user to edit Recipient Profiles in Final Cart
-- Introduce total costs to Keyword Builder and Final Cart
+* Conditional formatting for dealing with late tasks
+* Enable app to be a Progressive Web App for mobile use
+* Enable note pages to be taken on app
+* Enable a notes section for each calendar item
+* Enable a table of contents for all note pages and calendar pages sorted by date created
+* Enable a search function to search for notes and clanedar items
+* Enable a favorite option to favorite and quick reference note pages
+* JWT authentication
+* Enable an ability to draw or take pictures on pages
 
 ## Time/Priority Matrix
 
@@ -89,23 +81,44 @@ Based on the initial logic defined in the previous sections try and breakdown th
 | Component | Description | 
 | --- | :---: |  
 | App | This will make the initial data pull and include React Router| 
-| Nav | This will allwo the user to see the logo and select from the menu |
-| Keyword Builder | This will be the homepage - it will allow the user to input the meaty data about the recipient. This will be a routed page. | 
-| Product Carousel | This will contain all the Product cards, selection buttons, and removal buttons |
-| Product | This will contain the specific product image, name, and price |
-| Final Cart | This is a routed page that will show all of the selected items, the subtotal, and the links to the Products for easy purchase. |
-| Selected Product | This will show the product profile in the Final Cart, including image, price, and name. | 
+| /Login | This will be the first page the user sees and will allow them to login. |
+| /CreateAccount | This will allow the user to create an account. | 
+| /Home | This will display a summary view of the current day and current week. It will provide a snapshot of what's important to the user that day. |
+| HomeToday | Small widget located on the homepage that will display the first 2 or 3 tasks and events for the user. |
+| HomeTodayTasks | Included in HomeToday, shows today's tasks. |
+| HomeTodayEvents | Included in HomeToday, shows today's events | 
+| HomeWeek | Small widget on the homepage that display the week's tasks in a preview |
+| Nav | Static nav that allows the user to quickly navigate to the different calendar modes |
+| /Day/:year/:month/:day | Page that will display all of the day's events and all of the tasks needed to be done that day |
+| DayEvents | renders all events for that day |
+| DayTasks | renders all of the tasks for that day |
+| DayWeekTasks | renders tasks needed to be done that week so that the user may decide to include them for the day |
+| /Week/:year/:month/:w-startday/:day | page that shows the calendar view of the week |
+| WeekEvents | renders all events for that week |
+| WeekTasks | renders all tasks needing to be done that week |
+| WeekMonthTasks | renders the tasks slottedfor the month so that user can decide to incorporate them into the week if wanted |
+| /Month/:year/:month | renders calendar view of the whole month |
+| MonthCalendar | renders calendar of month |
+| MonthTasks | renders all tasks needing completion that month |
+| /Year/:year/:y-current-month | Renders the next 6 months at a igh level view |
+| YearMonth | renders all the events and tasks of that month |
+| /Add | allows you to add an event or task and attach it to a calendar item |
 
 
 Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe. Also, put a gif at the top of your Readme before you pitch, and you'll get a panda prize.
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Create Nav, Keyword, Cart pages | H | 1hr | 0.5hr | 0.5hr |
+| Create component pages | H | 1hr | 0.5hr | 0.5hr |
 | Initialize Router and create Switch statements | H | 1hr | 0.5hr | 0.5hr |
 | Build Nav | H | 1hr | 0.5hr | 0.5hr |
-| Build Keyword Page | H | 1hr | 0.5hr | 0.5hr |
-| Build Cart Page | M | 1hr | 0.5hr | 0.5hr |
+| Build Login Page | H | 1hr | 0.5hr | 0.5hr |
+| Build Home Page | M | 1hr | 0.5hr | 0.5hr |
+| Build Day Page | M | 2hr | 0.5hr | 0.5hr |
+| Build Week Page | M | 1hr | 0.5hr | 0.5hr |
+| Build Month Page | M | 1hr | 0.5hr | 0.5hr |
+| Build Year Page | M | 1hr | 0.5hr | 0.5hr |
+| Build Add Page | M | 1hr | 0.5hr | 0.5hr |
 | Add and test linking between router pages | H | 1hr | 0.5hr | 0.5hr |
 | Add display functionality to Name and Budget fields | L | 2hr | 2hr | 2hr |
 | Initialize State for saving Recipient data | H | 0.5hr | 0.5hr | 0.5hr |
