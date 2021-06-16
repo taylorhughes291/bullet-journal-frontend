@@ -7,6 +7,7 @@ import Login from "./pages/Login"
 import Month from "./pages/Month"
 import Week from "./pages/Week"
 import Year from "./pages/Year"
+import Nav from "./components/Nav"
 import {Switch, Route, Redirect, withRouter} from "react-router-dom"
 
 function App() {
@@ -54,6 +55,7 @@ function App() {
           <Year />
         </Route>
       </Switch>
+      <Nav />
     </div>
   );
 }
