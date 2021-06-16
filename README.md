@@ -4,6 +4,7 @@
 
 - [Github Repo](https://github.com/taylorhughes291/bullet-journal-frontend)
 - [Deployment Link](https://bullet-journal-frontend.vercel.app/)
+- [React Architecture](https://docs.google.com/drawings/d/1_tKvlm89imjumXmPfb26RxcIoKRrw1B1YhuqrC_C6e0/edit?usp=sharing)
 
 ## Project Description
 
@@ -43,9 +44,7 @@ Upload images of wireframe to cloudinary and add the link here with a descriptio
 
 #### MVP Documents
 - [Mobile Wireframes](https://imgur.com/a/Ps2wUt7)
-- [Tablet Wireframes]()
-- [Desktop Wireframes]()
-- [React Architecture]()
+- [React Architecture](https://docs.google.com/drawings/d/1_tKvlm89imjumXmPfb26RxcIoKRrw1B1YhuqrC_C6e0/edit?usp=sharing)
 
 
 ### MVP/PostMVP - 5min
@@ -94,8 +93,6 @@ Based on the initial logic defined in the previous sections try and breakdown th
 | DayTasks | renders all of the tasks for that day |
 | DayWeekTasks | renders tasks needed to be done that week so that the user may decide to include them for the day |
 | /Week/:year/:month/:w-startday/:day | page that shows the calendar view of the week |
-| WeekEvents | renders all events for that week |
-| WeekTasks | renders all tasks needing to be done that week |
 | WeekMonthTasks | renders the tasks slottedfor the month so that user can decide to incorporate them into the week if wanted |
 | /Month/:year/:month | renders calendar view of the whole month |
 | MonthCalendar | renders calendar of month |
@@ -109,32 +106,23 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
+| Learn Python/Django | H | 3hr | 0.5hr | 0.5hr |
+| Build out basic backend routes | H | 2hr | 0.5hr | 0.5hr |
+| Create database update logic for when user logs in again/time events | H | 4hr | 0.5hr | 0.5hr |
+| Test routes using Postman | H | 1hr | 0.5hr | 0.5hr |
+| Complete deployment | H | 2hr | 0.5hr | 0.5hr |
 | Create component pages | H | 1hr | 0.5hr | 0.5hr |
 | Initialize Router and create Switch statements | H | 1hr | 0.5hr | 0.5hr |
 | Build Nav | H | 1hr | 0.5hr | 0.5hr |
 | Build Login Page | H | 1hr | 0.5hr | 0.5hr |
 | Build Home Page | M | 1hr | 0.5hr | 0.5hr |
 | Build Day Page | M | 2hr | 0.5hr | 0.5hr |
-| Build Week Page | M | 1hr | 0.5hr | 0.5hr |
+| Build Week Page | M | 2hr | 0.5hr | 0.5hr |
 | Build Month Page | M | 1hr | 0.5hr | 0.5hr |
 | Build Year Page | M | 1hr | 0.5hr | 0.5hr |
-| Build Add Page | M | 1hr | 0.5hr | 0.5hr |
+| Build Add Page | M | 3hr | 0.5hr | 0.5hr |
 | Add and test linking between router pages | H | 1hr | 0.5hr | 0.5hr |
-| Add display functionality to Name and Budget fields | L | 2hr | 2hr | 2hr |
-| Initialize State for saving Recipient data | H | 0.5hr | 0.5hr | 0.5hr |
-| Initialize State for Product Information | H | 0.5hr | 1hr | 1hr |
-| Create onChange and OnClick Events to manipulate Recipient State | H | 3hr | 2hr | 2hr |
-| Create Dummy data for development purposes | H | 2hr | 1hr | 1hr |
-| Implement Product Ranking Algorithm | M | 3hr | 5hr | 5hr |
-| Build Product Carousel Component | H | 2.5hr | 1hr | 1hr |
-| Build Product Component | H | 2hr | 2hr | 2hr |
-| Send Product Info to Product Component | H | 1.5hr | 1hr | 1hr |
-| Implement Selection information lift to Recipient Profile | H | 1hr | 2hr | 2hr |
-| Style Carousel | H | 2hr | 1hr | 1hr |
-| Style selected Products | H | 2hr | 2hr | 2hr |
-| Send recipient profile to cart | H | 1hr | 2hr | 2hr |
-| Render Cart | M | 1hr | 1hr | 1hr |
-| Render Product Links | H | 2.5hr | 2hr | 2hr |
+| Implement getEffects for all pages | H | 1hr | 1hr | 1hr |
 | Layout for Mobile | H | 3hr | 3hr | 3hr |
 | Styling for Tablet | H | 3hr | 1hr | 1hr |
 | Styling for Desktop | H | 3hr | 1hr | 1hr |
