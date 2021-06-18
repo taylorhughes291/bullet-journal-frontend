@@ -1,7 +1,8 @@
 import React from "react"
 import HomeWeekTasks from "./HomeWeekTasks"
+import {Link} from "react-router-dom"
 
-const HomeWeek = () => {
+const HomeWeek = (props) => {
 
     /////////////////////////
     // Constants
@@ -17,8 +18,17 @@ const HomeWeek = () => {
 
     return (
         <>
-            <h2>HomeWeek Page</h2>
-            <HomeWeekTasks />
+            <div className="wee-headline-cont">
+                <p>This Week</p>
+                <Link
+                    to="/week"
+                ><button>All</button></Link>
+            </div>
+            <HomeWeekTasks 
+                tasks={props.tasks}
+                updateTask={props.updateTask}
+                deleteTask={props.deleteTask}
+            />
         </>
     )
 }
