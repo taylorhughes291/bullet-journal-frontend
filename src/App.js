@@ -10,13 +10,13 @@ import Nav from "./components/Nav"
 import {Switch, Route, Redirect, withRouter} from "react-router-dom"
 import {useState, useEffect} from "react"
 
-function App() {
+function App(props) {
 
   /////////////////////////
   // Constants
   /////////////////////////
 
-  const [userId, setUserId] = useState("3")
+  const [userId, setUserId] = useState("")
   const [date, setDate] = useState("")
   const [tasks, setTasks] = useState([])
   const [events, setEvents] = useState([])
@@ -104,7 +104,7 @@ function App() {
   /////////////////////////
   // Render
   /////////////////////////
-
+  
   useEffect(() => {
     getData()
   }, [])
@@ -146,6 +146,7 @@ function App() {
         >
           <Login 
             setUserId={setUserId}
+            url={url}
           />
         </Route>
         <Route
@@ -185,7 +186,9 @@ function App() {
           />
         </Route>
       </Switch>
-      <Nav />
+      <div className={props.location.pathname === "/login" || props.location.pathname === "/create" ? "hidden" : ""} >
+        <Nav />
+      </div>
     </div>
   );
 }

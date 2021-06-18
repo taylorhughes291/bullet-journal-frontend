@@ -3,6 +3,19 @@ import HomeToday from "../components/HomeToday"
 import HomeWeek from "../components/HomeWeek"
 
 const Home = () => {
+
+    /////////////////////////
+    // Constants
+    /////////////////////////
+
+    /////////////////////////
+    // Functions
+    /////////////////////////
+
+    /////////////////////////
+    // Render
+    /////////////////////////
+
     return (
         <>
             <h2>Home Page</h2>
