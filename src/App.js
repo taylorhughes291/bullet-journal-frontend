@@ -127,6 +127,7 @@ function App(props) {
         >
           <Create 
             setUserId={setUserId}
+            url={url}
           />
         </Route>
         <Route
