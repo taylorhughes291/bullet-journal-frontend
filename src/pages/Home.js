@@ -8,7 +8,7 @@ const Home = (props) => {
     // Constants
     /////////////////////////
 
-    const {tasks, events, updateTask, updateEvent, deleteTask, deleteEvent, date} = props
+    const {tasks, events, updateTask, updateEvent, deleteTask, deleteEvent, date, setDate} = props
 
     /////////////////////////
     // Functions
