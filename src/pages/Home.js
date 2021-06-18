@@ -33,7 +33,10 @@ const Home = (props) => {
                 deleteEvent={deleteEvent}
                 date={date}
             />
-            <HomeWeek />
+            <HomeWeek 
+                tasks={tasks}
+                date={date}
+            />
         </>
     )
 }
