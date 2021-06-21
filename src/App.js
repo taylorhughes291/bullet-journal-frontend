@@ -1,5 +1,5 @@
 import './App.css';
-import Add from "./pages/Add"
+import Add from "./components/Add"
 import Create from "./pages/Create"
 import Home from "./pages/Home"
 import Login from "./pages/Login"
@@ -20,6 +20,7 @@ function App(props) {
   const [date, setDate] = useState("")
   const [tasks, setTasks] = useState([])
   const [events, setEvents] = useState([])
+  const [modalShow, setModalShow] = useState(false);
 
   const url = process.env.REACT_APP_BACKENDURL
 
@@ -101,6 +102,10 @@ function App(props) {
     })
   }
 
+  const handleAdd = () => {
+    setModalShow(true)
+  }
+
   /////////////////////////
   // Render
   /////////////////////////
@@ -117,11 +122,6 @@ function App(props) {
           exact path="/"
         >
           <Redirect to="/login" />
-        </Route>
-        <Route
-          path="/add"
-        >
-          <Add />
         </Route>
         <Route
           path="/create"
@@ -191,8 +191,15 @@ function App(props) {
           />
         </Route>
       </Switch>
+      <Add 
+          modalShow={modalShow}
+          setModalShow={setModalShow}
+          userId={userId}
+      />
       <div className={props.location.pathname === "/login" || props.location.pathname === "/create" ? "hidden" : ""} >
-        <Nav />
+        <Nav 
+          handleAdd={handleAdd}
+        />
       </div>
     </div>
   );
