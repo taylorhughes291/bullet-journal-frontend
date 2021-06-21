@@ -41,6 +41,7 @@ const DayTasks = (props) => {
             <div className="day-task-cont" key={index}>
                 <p
                     onClick={() => handleComplete(item.pk)}
+                    className={ item.fields.isComplete ? "task-name strike" : "task-name" }
                 >{item.fields.name}</p>
                 <p>...</p>
             </div>

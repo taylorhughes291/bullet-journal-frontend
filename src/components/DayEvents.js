@@ -17,7 +17,7 @@ const DayEvents = (props) => {
 
     const eventsList = dayEvents.map((item, index) => {
         return (
-            <div className="today-event-cont" key={index}>
+            <div className="day-event-cont" key={index}>
                 <p>{item.fields.name}</p>
                 <p><Moment format="h:mm A" utc >{item.fields.startDate}</Moment> - <Moment format="h:mm A" utc >{item.fields.endDate}</Moment></p>
                 <p>...</p>
@@ -34,7 +34,15 @@ const DayEvents = (props) => {
     /////////////////////////
 
     return (
-        <h2>DayEvents Page</h2>
+        <>
+             <div className="day-events-add-cont">
+                <p>Events, {props.selectedDate.format('MM/DD/YYYY')}</p>
+                <button>+</button>
+            </div>
+            <div className="day-events-cont">
+                {eventsList}
+            </div>
+        </>
     )
 }
 
