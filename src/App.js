@@ -187,6 +187,7 @@ function App(props) {
             updateEvent={updateEvent}
             deleteTask={deleteTask}
             deleteEvent={deleteEvent}
+            date={date}
           />
         </Route>
       </Switch>
