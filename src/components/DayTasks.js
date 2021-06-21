@@ -12,18 +12,7 @@ const DayTasks = (props) => {
     // Functions
     /////////////////////////
 
-    const handleComplete = (pk) => {
-        const selectedTask = props.tasks.find((item, index) => {
-            return (
-                item.pk === pk
-            )
-        })
-        const body = {
-            ...selectedTask.fields,
-            isComplete: !selectedTask.fields.isComplete
-        }
-        props.updateTask(body, pk)
-    }
+
 
     /////////////////////////
     // Render
@@ -40,7 +29,7 @@ const DayTasks = (props) => {
         return (
             <div className="day-task-cont" key={index}>
                 <p
-                    onClick={() => handleComplete(item.pk)}
+                    onClick={() => props.handleComplete(item.pk)}
                     className={ item.fields.isComplete ? "task-name strike" : "task-name" }
                 >{item.fields.name}</p>
                 <p>...</p>

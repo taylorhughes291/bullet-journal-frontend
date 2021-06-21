@@ -27,6 +27,19 @@ const Week = (props) => {
     // Functions
     /////////////////////////
 
+    const handleComplete = (pk) => {
+        const selectedTask = props.tasks.find((item, index) => {
+            return (
+                item.pk === pk
+            )
+        })
+        const body = {
+            ...selectedTask.fields,
+            isComplete: !selectedTask.fields.isComplete
+        }
+        props.updateTask(body, pk)
+    }
+
     /////////////////////////
     // Render
     /////////////////////////
@@ -89,9 +102,14 @@ const Week = (props) => {
                 deleteTask={props.deleteTask}
                 deleteEvent={props.deleteEvent}
                 selectedDate={selectedDate}
+                handleComplete={handleComplete}
             />
             <WeekTasks 
                 tasks={props.tasks}
+                updateTask={props.updateTask}
+                deleteTask={props.deleteTask}
+                weekStart={weekStart}
+                handleComplete={handleComplete}
             />
         </>
     )
