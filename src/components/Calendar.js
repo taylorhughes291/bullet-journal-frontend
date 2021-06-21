@@ -8,9 +8,6 @@ const Calendar = (props) => {
     // Constants
     /////////////////////////
 
-    const todayDate = moment(props.date)
-    const monthStart = todayDate.clone().startOf('month')
-
     /////////////////////////
     // Functions
     /////////////////////////
@@ -24,7 +21,7 @@ const Calendar = (props) => {
     for (let i = 1; i <= parseInt(props.lastOfMonth.date()); i += 1) {
         const headline = props.events.find((item, index) => {
             return (
-                item.fields.dateClass === "month" && (moment(item.fields.startDate).isSameOrBefore(monthStart.clone().add(i - 1, 'days'), 'day') && moment(item.fields.endDate).isSameOrAfter(monthStart.clone().add(i - 1, 'days'), 'day'))
+                item.fields.dateClass === "month" && (moment(item.fields.startDate).isSameOrBefore(props.monthStart.clone().add(i - 1, 'days'), 'day') && moment(item.fields.endDate).isSameOrAfter(props.monthStart.clone().add(i - 1, 'days'), 'day'))
             )
         })
         console.log(headline);

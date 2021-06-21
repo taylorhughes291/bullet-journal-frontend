@@ -17,13 +17,13 @@ const WeekTasks = (props) => {
     // Render
     /////////////////////////
 
-    const dayTasks = props.tasks.filter((item, index) => {
+    const weekTasks = props.tasks.filter((item, index) => {
         return (
             (moment(item.fields.dueDate).isSameOrAfter(props.weekStart.clone(), "day") && moment(item.fields.dueDate).isSameOrBefore(props.weekStart.clone().add(6, 'days'), "day")) && item.fields.taskCycle.week
         )
     })
 
-    const taskList = dayTasks.map((item, index) => {
+    const taskList = weekTasks.map((item, index) => {
         return (
             <div className="day-task-cont" key={index}>
                 <p

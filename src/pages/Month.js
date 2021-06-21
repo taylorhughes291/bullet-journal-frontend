@@ -12,6 +12,7 @@ const Month = (props) => {
 
     const month = moment(props.date)
     const lastOfMonth = month.clone().endOf('month')
+    const monthStart = month.clone().startOf('month')
 
 
     /////////////////////////
@@ -45,9 +46,17 @@ const Month = (props) => {
                 updateEvents={props.Events}
                 deleteEvents={props.deleteEvents}
                 lastOfMonth={lastOfMonth}
+                monthStart={monthStart}
                 date={props.date}
             />
-            <MonthTasks />
+            <MonthTasks 
+                tasks={props.tasks}
+                updateTask={props.updateTask}
+                deleteTask={props.deleteTask}
+                lastOfMonth={lastOfMonth}
+                monthStart={monthStart}
+                date={props.date}
+            />
         </>
     )
 }
