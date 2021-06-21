@@ -2,11 +2,13 @@ import React from "react"
 import DayTasks from "./DayTasks"
 import DayEvents from "./DayEvents"
 
-const Day = () => {
+const Day = (props) => {
 
     /////////////////////////
     // Constants
     /////////////////////////
+
+
 
     /////////////////////////
     // Functions
@@ -18,9 +20,26 @@ const Day = () => {
 
     return (
         <>
-            <h2>Day Page</h2>
-            <DayTasks />
-            <DayEvents />
+            <div className="events-tasks-buttons-cont">
+                <div>
+                    <h5>Events</h5>
+                </div>
+                <div>
+                    <h5>Tasks</h5>
+                </div>
+            </div>
+            <DayTasks 
+                tasks={props.tasks}
+                updateTask={props.updateTask}
+                deleteTask={props.deleteTask}
+                selectedDate={props.selectedDate}
+            />
+            <DayEvents 
+                events={props.events}
+                updateEvent={props.updateEvent}
+                deleteEvent={props.deleteEvent}
+                selectedDate={props.selectedDate}
+            />
         </>
     )
 }
