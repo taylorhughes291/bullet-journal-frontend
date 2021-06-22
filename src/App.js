@@ -19,8 +19,28 @@ function App(props) {
 
   const [userId, setUserId] = useState("")
   const [date, setDate] = useState("")
-  const [tasks, setTasks] = useState([])
-  const [events, setEvents] = useState([])
+  const [tasks, setTasks] = useState([{
+    fields: {
+      name: "",
+      isComplete: "",
+      taskCycle: {
+        day: false,
+        week: false,
+        month: false
+      },
+      dueDate: "",
+      userId: ""
+    }
+  }])
+  const [events, setEvents] = useState([{
+    fields: {
+      name: "",
+      startDate: "",
+      endDate: "",
+      userId: "",
+      dateClass: ""
+    }
+  }])
   const [modalShow, setModalShow] = useState(false);
   const [addSettings, setAddSettings] = useState({
     taskCycle: "day",
@@ -34,8 +54,8 @@ function App(props) {
   // Functions
   /////////////////////////
 
-  const getData = () => {
-    const getUrl = url + "/user/" + userId
+  const getData = (user) => {
+    const getUrl = url + "/user/" + user + "/"
     fetch(getUrl)
     .then((response) => (response.json()))
     .then((data) => {
@@ -125,7 +145,7 @@ function App(props) {
   /////////////////////////
   
   useEffect(() => {
-    getData()
+    getData(userId)
     setDate(new Date())
   }, [])
 
@@ -148,6 +168,8 @@ function App(props) {
             <Create 
               setUserId={setUserId}
               url={url}
+              getData={getData}
+              setDate={setDate}
             />
           </Route>
           <Route

@@ -40,9 +40,11 @@ const Create = (props) => {
         .then((data) => {
             if (data.status === 200) {
                 props.setUserId(data.data[0].pk)
+                props.getData(data.data[0].pk)
+                props.setDate(new Date())
                 props.history.push("/home")
             } else if (data.status === 403) {
-
+                alert("this user already exists.")
             }
         })
     }
