@@ -17,7 +17,7 @@ function App(props) {
   // Constants
   /////////////////////////
 
-  const [userId, setUserId] = useState("8")
+  const [userId, setUserId] = useState("")
   const [date, setDate] = useState("")
   const [tasks, setTasks] = useState([])
   const [events, setEvents] = useState([])
