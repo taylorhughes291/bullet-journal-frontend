@@ -145,8 +145,8 @@ function App(props) {
   /////////////////////////
   
   useEffect(() => {
-    getData(userId)
-    setDate(new Date())
+      getData(userId)
+      setDate(new Date())
   }, [userId])
 
   return (
