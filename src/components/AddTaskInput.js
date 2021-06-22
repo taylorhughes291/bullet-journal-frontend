@@ -46,7 +46,7 @@ const AddTaskInput = (props) => {
         .then((data) => {
           setTaskFormData(emptyForm)
           props.setModalShow(false)
-          props.getData()
+          props.getData(props.userId)
         })
     }
 

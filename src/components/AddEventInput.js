@@ -45,7 +45,7 @@ const AddEventInput = (props) => {
         .then((data) => {
           setEventFormData(emptyForm)
           props.setModalShow(false)
-          props.getData()
+          props.getData(props.userId)
         })
       }
 
