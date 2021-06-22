@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React from "react"
 import moment from "moment"
 
 const Calendar = (props) => {
@@ -44,7 +44,7 @@ const Calendar = (props) => {
                 </div>
                 <button
                     onClick={() => handleAdd(day)}
-                ><i class="fas fa-ellipsis-h"></i></button>
+                ><i className="fas fa-ellipsis-h"></i></button>
             </div>
         )
     }
