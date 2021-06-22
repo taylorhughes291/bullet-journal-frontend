@@ -69,7 +69,7 @@ const AddEventInput = (props) => {
                     eventFormData={eventFormData}
                     setEventFormData={setEventFormData}
                   />
-                  <input type="submit"></input>
+                  <input className="submit" type="submit"></input>
                 </form>
               </div>
     )

@@ -10,6 +10,7 @@ const Add = (props) => {
     /////////////////////////
 
     const {userId, addSettings, url, setModalShow, getData, setAddSettings} = props
+    const [selectedView, setSelectedView] = useState(addSettings.category)
 
     /////////////////////////
     // Functions
@@ -35,15 +36,23 @@ const Add = (props) => {
               </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              <div>
-                <button
+              <div class="events-tasks-buttons-cont">
+                <div
                   name="task"
-                  onClick={() => setAddSettings({...addSettings, category: "task"})}
-                >Task</button>
-                <button
+                  onClick={() => {
+                    setAddSettings({...addSettings, category: "task"})
+                    setSelectedView("task")
+                  }}
+                  className={selectedView === "task" ? "selected" : "" }
+                ><h5>Task</h5></div>
+                <div
                   name="event"
-                  onClick={() => setAddSettings({...addSettings, category: "event"})}
-                >Event</button>
+                  onClick={() => {
+                    setAddSettings({...addSettings, category: "event"})
+                    setSelectedView("event")
+                  }}
+                  className={selectedView === "event" ? "selected" : "" }
+                ><h5>Event</h5></div>
               </div>
               <div
                 className={ addSettings.category === "task" ? "task-add" : "hidden task-add"}

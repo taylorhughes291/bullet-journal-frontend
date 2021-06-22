@@ -446,7 +446,7 @@ div.month div.day-task-cont {
   margin: 0 0 5px;
 }
 
-div.month h5, div.month h2 {
+div.month h5, div.month h2, div.modal-body h5 {
   font-family: 'Lexend Tera', sans-serif;
   font-weight: bold;
   text-transform: uppercase;
@@ -512,4 +512,70 @@ p {
   -webkit-line-clamp: 1; /* number of lines to show */
   -webkit-box-orient: vertical;
   text-align: left;
+}
+
+/* ~~~~~~~~~~~ ADD ~~~~~~~~~~ */
+div.modal-header {
+  font-family: 'Lexend Tera', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+div.modal-body div.events-tasks-buttons-cont {
+  display: flex;
+  width: 100%;
+  grid-gap: 5px;
+}
+
+div.modal-body {
+  display: flex;
+  width: 95%;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+div.modal-content {
+  display: flex;
+  width: 95%;
+  flex-direction: column;
+  align-items: center;
+}
+
+div.modal-body div.events-tasks-buttons-cont div {
+  width: 50%;
+  border: 2px solid black;
+  border-radius: 3px;
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  grid-gap: 5px;
+}
+
+div.task-add, div.event-add {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+div.modal-body form {
+  margin: 0 0 30px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+div.modal-body input{
+  margin: 20px 0 0;
+  width: 100%;
+}
+
+div.modal-body form input.submit {
+  border: 2px solid black;
+  border-radius: 3px;
+  border-radius: 3px;
+  font-family: 'Lexend Tera', sans-serif;
+  text-transform: uppercase;
 }

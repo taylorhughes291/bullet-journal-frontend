@@ -68,21 +68,21 @@ const AddTaskInput = (props) => {
 
 
     return (
-        <div >
-                <form
-                  onSubmit={handleTaskSubmit}
-                >
-                  <input 
-                    type="text"
-                    placeholder="Task Name"
-                    name="name"
-                    value={taskFormData.name}
-                    onChange={handleTaskChange}
-                  ></input>
-                  {props.addSettings.taskCycle === "day" && <DueDateInput />}
-                  <input type="submit"></input>
-                </form>
-              </div>
+        <>
+          <form
+            onSubmit={handleTaskSubmit}
+          >
+            <input 
+              type="text"
+              placeholder="Task Name"
+              name="name"
+              value={taskFormData.name}
+              onChange={handleTaskChange}
+            ></input>
+            {props.addSettings.taskCycle === "day" && <DueDateInput />}
+            <input className="submit" type="submit"></input>
+          </form>
+        </>
     )
 }
 
