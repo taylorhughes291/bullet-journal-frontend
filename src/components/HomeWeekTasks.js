@@ -38,17 +38,17 @@ const HomeWeekTasks = (props) => {
     /////////////////////////
 
     return (
-        <>
-        <div>
-            <p>Tasks</p>
-            <button
-                onClick={() => handleAdd()}
-            >+</button>
+        <div className="home-week-tasks-cont"> 
+            <div className="headline">
+                <p>Tasks</p>
+                <button
+                    onClick={() => handleAdd()}
+                >+</button>
+            </div>
+            <div className="today-tasks-cont">
+                {taskList}
+            </div>
         </div>
-        <div className="today-tasks-cont">
-            {taskList}
-        </div>
-    </>
     )
 }
 

@@ -38,8 +38,8 @@ const HomeTodayTasks = (props) => {
     /////////////////////////
 
     return (
-        <>
-            <div>
+        <div className="home-today-tasks-cont">
+            <div className="headline">
                 <p>Tasks</p>
                 <button
                     onClick={() => handleAdd()}
@@ -48,7 +48,7 @@ const HomeTodayTasks = (props) => {
             <div className="today-tasks-cont">
                 {taskList}
             </div>
-        </>
+        </div>
     )
 }
 

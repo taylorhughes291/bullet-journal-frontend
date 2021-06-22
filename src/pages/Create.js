@@ -1,5 +1,6 @@
 import React, {useState} from "react"
-import {withRouter} from "react-router-dom"
+import {withRouter, Link} from "react-router-dom"
+import smallLogo from "../assets/city-journal-small.png"
 
 const Create = (props) => {
 
@@ -51,13 +52,16 @@ const Create = (props) => {
     /////////////////////////
 
     return (
-        <>
+        <div className="create-cont">
             <div className="back-logo-cont">
-                <img src="https://placeimg.com/50/50/any" alt="back button" />
-                <img src="https://placeimg.com/100/50/any" alt="back button" />
+                <Link
+                    to="/login"
+                >
+                    <i class="fas fa-arrow-left fa-2x"></i>
+                </Link>
+                <img src={smallLogo} className="small-logo" alt="city journal small logo" />
             </div>
-            <h2>New Account</h2>
-            <img src="https://placeimg.com/150/125/any" alt="back button" />
+            <h2>NEW ACCOUNT</h2>
             <form
                 onSubmit={handleSubmit}
             >
@@ -91,9 +95,10 @@ const Create = (props) => {
                 ></input>
                 <input
                     type="submit"
+                    value="SUBMIT"
                 ></input>
             </form>
-        </>
+        </div>
     )
 }
 

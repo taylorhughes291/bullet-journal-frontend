@@ -9,6 +9,7 @@ import Year from "./pages/Year"
 import Nav from "./components/Nav"
 import {Switch, Route, Redirect, withRouter} from "react-router-dom"
 import {useState, useEffect} from "react"
+import smallLogo from "./assets/city-journal-small.png"
 
 function App(props) {
 
@@ -131,6 +132,10 @@ function App(props) {
   return (
     <div className="App">
       <div className="non-nav">
+        <header>
+            <img src={smallLogo} className="small-logo" alt="small logo" />
+            <i class="fas fa-bars fa-2x"></i>
+        </header>
         <Switch>
           <Route
             exact path="/"

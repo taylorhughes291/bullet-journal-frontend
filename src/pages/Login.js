@@ -1,5 +1,6 @@
 import React, {useState} from "react"
 import {Link, withRouter} from "react-router-dom"
+import logo from "../assets/city-journal.png"
 
 const Login = (props) => {
 
@@ -48,8 +49,8 @@ const Login = (props) => {
     /////////////////////////
 
     return (
-        <>
-            <img src="https://placeimg.com/225/175/any" alt="login bullet journal logo" />
+        <div className="login-cont">
+            <img src={logo} alt="login bullet journal logo" />
             <form
                 onSubmit={handleLogin}
             >
@@ -72,8 +73,8 @@ const Login = (props) => {
                     value="LOGIN"
                 ></input>
             </form>
-            <p>Don't have an account? <Link to="/create" >Signup</Link></p>
-        </>
+            <p>Don't have an account? <Link to="/create" >Sign Up</Link></p>
+        </div>
     )
 }
 

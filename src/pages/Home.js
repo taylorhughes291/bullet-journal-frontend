@@ -19,11 +19,7 @@ const Home = (props) => {
     /////////////////////////
 
     return (
-        <>
-            <div>
-                <img src="https://placeimg.com/100/50/any" alt="small logo" />
-                <img src="https://placeimg.com/50/50/any" alt="hamburger options menu" />
-            </div>
+        <div className="home-cont">
             <HomeToday 
                 tasks={tasks}
                 events={events}
@@ -44,7 +40,7 @@ const Home = (props) => {
                 userId={props.userId}
                 handleAddSettings={props.handleAddSettings}
             />
-        </>
+        </div>
     )
 }
 

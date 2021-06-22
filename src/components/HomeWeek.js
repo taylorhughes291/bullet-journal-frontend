@@ -17,8 +17,8 @@ const HomeWeek = (props) => {
     /////////////////////////
 
     return (
-        <>
-            <div className="wee-headline-cont">
+        <div className="home-week">
+            <div className="week-headline-cont">
                 <p>This Week</p>
                 <Link
                     to="/week"
@@ -34,7 +34,7 @@ const HomeWeek = (props) => {
                 userId={props.userId}
                 handleAddSettings={props.handleAddSettings}
             />
-        </>
+        </div>
     )
 }
 

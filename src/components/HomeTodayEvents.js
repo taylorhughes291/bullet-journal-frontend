@@ -18,8 +18,7 @@ const HomeTodayEvents = (props) => {
     const eventsList = todayEvents.map((item, index) => {
         return (
             <div className="today-event-cont" key={index}>
-                <p>{item.fields.name}</p>
-                <p><Moment format="h:mm A" utc >{item.fields.startDate}</Moment> - <Moment format="h:mm A" utc >{item.fields.endDate}</Moment></p>
+                <p><Moment format="h:mm A" utc >{item.fields.startDate}</Moment> - <Moment format="h:mm A" utc >{item.fields.endDate}</Moment>: {item.fields.name}</p>
                 <p>...</p>
             </div>
         )
@@ -39,7 +38,7 @@ const HomeTodayEvents = (props) => {
     /////////////////////////
 
     return (
-        <>
+        <div className="home-today-events-cont">
             <div className="events-add-cont">
                 <p>Events</p>
                 <button
@@ -49,7 +48,7 @@ const HomeTodayEvents = (props) => {
             <div className="today-events-cont">
                 {eventsList}
             </div>
-        </>
+        </div>
     )
 }
 
