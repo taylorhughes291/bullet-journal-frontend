@@ -30,7 +30,7 @@ const DayTasks = (props) => {
 
     const taskList = dayTasks.map((item, index) => {
         return (
-            <div className="day-task-cont" key={index}>
+            <div className="item" key={index}>
                 <p
                     onClick={() => props.handleComplete(item.pk)}
                     className={ item.fields.isComplete ? "task-name strike" : "task-name" }
@@ -41,17 +41,17 @@ const DayTasks = (props) => {
     })
 
     return (
-        <>
-            <div className="headline-add-cont">
+        <div class="top-level-cont">
+            <div className="headline">
                 <p>Tasks, {props.selectedDate.format('MM/DD/YYYY')}</p>
                 <button
                     onClick={() => handleAdd()}
                 >+</button>
             </div>
-            <div className="day-tasks-cont">
+            <div className="items">
                 {taskList}
             </div>
-        </>
+        </div>
     )
 }
 

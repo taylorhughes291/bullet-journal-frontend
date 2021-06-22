@@ -30,7 +30,7 @@ const WeekTasks = (props) => {
 
     const taskList = weekTasks.map((item, index) => {
         return (
-            <div className="day-task-cont" key={index}>
+            <div className="item" key={index}>
                 <p
                     onClick={() => props.handleComplete(item.pk)}
                     className={ item.fields.isComplete ? "task-name strike" : "task-name" }
@@ -41,17 +41,17 @@ const WeekTasks = (props) => {
     })
 
     return (
-        <>
-            <div className="week-headline-add-cont">
+        <div className="top-level-cont">
+            <div className="headline">
                 <p>This Week's Tasks</p>
                 <button
                     onClick={() => handleAdd()}
                 >+</button>
             </div>
-            <div className="week-tasks-cont">
+            <div className="items">
                 {taskList}
             </div>
-        </>
+        </div>
     )
 }
 

@@ -25,11 +25,7 @@ const Month = (props) => {
     /////////////////////////
 
     return (
-        <>
-            <div>
-                <img src="https://placeimg.com/100/50/any" alt="small logo" />
-                <img src="https://placeimg.com/50/50/any" alt="hamburger options menu" />
-            </div>
+        <div className="month">
             <div className="headline-next-cont">
                 <h2>{month.format('MMMM YYYY')}</h2>
             </div>
@@ -63,7 +59,7 @@ const Month = (props) => {
                 handleAddSettings={props.handleAddSettings}
                 handleAdd={props.handleAdd}
             />
-        </>
+        </div>
     )
 }
 

@@ -47,7 +47,7 @@
   text-decoration: line-through;
 }
 
-p {
+p, h1, h2, h3, h4, h5, h6 {
   margin: 0 !important;
 }
 
@@ -56,6 +56,10 @@ button {
   vertical-align: middle;
   padding-top: 0;
   padding-bottom: 0;
+}
+
+.selected {
+  background: red;
 }
 
 /* ~~~~~~~~~~ NAV ~~~~~~~~~~~ */
@@ -98,6 +102,7 @@ nav ul a {
 nav ul a:hover {
   text-transform: none;
   text-decoration: none;
+  color: black;
 }
 
 nav div.nav-item-cont {
@@ -127,7 +132,7 @@ nav div.plus-cont {
   width: 40px;
   height: 40px;
   border-radius: 12px;
-  background-color: #3F70F4;
+  background-color: black;
   color: white;
 }
 
@@ -139,6 +144,8 @@ nav div.plus-cont li {
 nav ul i {
   margin: 0 0 4px;
 }
+
+
 
 header {
   width: 85%;
@@ -248,23 +255,66 @@ div.home-cont div.today-cont div.home-today-events-cont, div.home-cont div.today
   margin-bottom: 8px;
 }
 
-div.home-cont div.today-cont div.home-today-events-cont div.events-add-cont, div.home-cont div.headline {
+div.home-cont div.today-cont div.home-today-events-cont div.events-add-cont, div.home-cont div.headline, div.week div.headline {
   display: flex;
   width: 98%;
   justify-content: space-between;
   text-decoration: underline;
 }
 
-div.home-cont div.today-cont div.home-today-events-cont div.today-events-cont, div.home-cont div.today-tasks-cont {
+div.home-cont div.today-cont div.home-today-events-cont div.today-events-cont, div.home-cont div.today-tasks-cont, div.week div.items {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
 }
 
-div.home-cont div.today-cont div.home-today-events-cont div.today-events-cont div.today-event-cont, div.home-cont div.today-tasks-cont div.today-task-cont {
+div.home-cont div.today-cont div.home-today-events-cont div.today-events-cont div.today-event-cont, div.home-cont div.today-tasks-cont div.today-task-cont, div.week div.item {
   width: 98%;
   display: flex;
   justify-content: space-between;
 }
 
+/* ~~~~~~~~~~~ WEEK ~~~~~~~~~~ */
+div.week {
+  padding: 10px 0 0;
+}
+
+div.week div.weekdays {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+div.week div.weekday {
+  border: 1px solid black;
+  width: 14.3%;
+}
+
+div.week div.week-content {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
+div.week div.events-tasks-buttons-cont {
+  display: flex;
+  width: 100%;
+}
+
+div.week div.events-tasks-buttons-cont div {
+  width: 50%;
+  border: 1px solid black;
+  margin: 10px 0;
+}
+
+div.week div.top-level-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  border: 1px solid black;
+  margin-bottom: 8px;
+}
