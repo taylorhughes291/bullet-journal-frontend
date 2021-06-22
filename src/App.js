@@ -21,6 +21,11 @@ function App(props) {
   const [tasks, setTasks] = useState([])
   const [events, setEvents] = useState([])
   const [modalShow, setModalShow] = useState(false);
+  const [addSettings, setAddSettings] = useState({
+    taskCycle: "day",
+    category: "task",
+    date: ""
+  })
 
   const url = process.env.REACT_APP_BACKENDURL
 
@@ -106,6 +111,14 @@ function App(props) {
     setModalShow(true)
   }
 
+  const handleAddSettings = (taskCycle, category, date) => {
+    setAddSettings({
+      taskCycle,
+      category,
+      date
+    })
+  }
+
   /////////////////////////
   // Render
   /////////////////////////
@@ -142,6 +155,9 @@ function App(props) {
             deleteTask={deleteTask}
             deleteEvent={deleteEvent}
             date={date}
+            handleAdd={handleAdd}
+            userId={userId}
+            handleAddSettings={handleAddSettings}
           />
         </Route>
         <Route
@@ -175,6 +191,8 @@ function App(props) {
             updateEvent={updateEvent}
             deleteTask={deleteTask}
             deleteEvent={deleteEvent}
+            modalShow={modalShow}
+            setModalShow={setModalShow}
           />
         </Route>
         <Route
@@ -195,6 +213,10 @@ function App(props) {
           modalShow={modalShow}
           setModalShow={setModalShow}
           userId={userId}
+          addSettings={addSettings}
+          setAddSettings={setAddSettings}
+          url={url}
+          getData={getData}
       />
       <div className={props.location.pathname === "/login" || props.location.pathname === "/create" ? "hidden" : ""} >
         <Nav 

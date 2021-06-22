@@ -4,8 +4,13 @@ const AddTaskInput = (props) => {
 
     const [taskFormData, setTaskFormData] = useState({
         name: "",
-        dueDate: ""
+        dueDate: props.addSettings.date
       })
+
+    const emptyForm = {
+      name: "",
+      dueDate: ""
+    }
 
     const handleTaskChange = (event) => {
         setTaskFormData({
@@ -21,12 +26,25 @@ const AddTaskInput = (props) => {
             dueDate: taskFormData.dueDate,
             userId: props.userId,
             taskCycle: {
-            day: false,
-            week: false,
-            month: false
+              day: props.addSettings.taskCycle === "day" ? true : false,
+              week: props.addSettings.taskCycle === "week" ? true : false,
+              month: props.addSettings.taskCycle === "month" ? true : false
             }
         }
-    console.log(body);
+        const postUrl = props.url + "/task/"
+        fetch(postUrl, {
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json"
+          },
+          body: JSON.stringify(body)
+        })
+        .then((response) => response.json())
+        .then((data) => {
+          setTaskFormData(emptyForm)
+          props.setModalShow(false)
+          props.getData()
+        })
     }
 
 

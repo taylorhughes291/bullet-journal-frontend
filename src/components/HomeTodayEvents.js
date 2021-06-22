@@ -29,6 +29,11 @@ const HomeTodayEvents = (props) => {
     // Functions
     /////////////////////////
 
+    const handleAdd = () => {
+        props.handleAddSettings("day", "event", new Date())
+        props.handleAdd()
+    }
+
     /////////////////////////
     // Render
     /////////////////////////
@@ -37,7 +42,9 @@ const HomeTodayEvents = (props) => {
         <>
             <div className="events-add-cont">
                 <p>Events</p>
-                <button>+</button>
+                <button
+                    onClick={() => handleAdd()}
+                >+</button>
             </div>
             <div className="today-events-cont">
                 {eventsList}

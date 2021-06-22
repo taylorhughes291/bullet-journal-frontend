@@ -110,6 +110,8 @@ const Week = (props) => {
                 deleteTask={props.deleteTask}
                 weekStart={weekStart}
                 handleComplete={handleComplete}
+                modalShow={props.modalShow}
+                setModalShow={props.setModalShow}
             />
         </>
     )

@@ -32,10 +32,17 @@ const Home = (props) => {
                 deleteTask={deleteTask}
                 deleteEvent={deleteEvent}
                 date={date}
+                handleAddSettings={props.handleAddSettings}
+                handleAdd={props.handleAdd}
             />
             <HomeWeek 
                 tasks={tasks}
                 date={date}
+                handleAdd={props.handleAdd}
+                modalShow={props.modalShow}
+                setModalShow={props.setModalShow}
+                userId={props.userId}
+                handleAddSettings={props.handleAddSettings}
             />
         </>
     )

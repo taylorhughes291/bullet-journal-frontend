@@ -10,7 +10,7 @@ const HomeToday = (props) => {
     // Constants
     /////////////////////////
     
-    const {events, tasks, updateEvent, updateTask, deleteTask, deleteEvent, date} = props
+    const {events, tasks, updateEvent, updateTask, deleteTask, deleteEvent, date, handleAddSettings, handleAdd} = props
 
     /////////////////////////
     // Functions
@@ -34,12 +34,16 @@ const HomeToday = (props) => {
                     updateEvent={updateEvent}
                     deleteEvent={deleteEvent}
                     date={date}
+                    handleAddSettings={handleAddSettings}
+                    handleAdd={handleAdd}
                 />
                 <HomeTodayTasks 
                     tasks={tasks}
                     updateTask={updateTask}
                     deleteTask={deleteTask}
                     date={date}
+                    handleAddSettings={handleAddSettings}
+                    handleAdd={handleAdd}
                 />
             </div>
         </>

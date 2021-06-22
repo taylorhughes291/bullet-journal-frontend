@@ -28,6 +28,11 @@ const HomeWeek = (props) => {
                 tasks={props.tasks}
                 updateTask={props.updateTask}
                 deleteTask={props.deleteTask}
+                handleAdd={props.handleAdd}
+                modalShow={props.modalShow}
+                setModalShow={props.setModalShow}
+                userId={props.userId}
+                handleAddSettings={props.handleAddSettings}
             />
         </>
     )

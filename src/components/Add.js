@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, {useEffect, useState} from "react"
 import {Modal, Button} from "react-bootstrap"
 import AddEventInput from "./AddEventInput"
 import AddTaskInput from "./AddTaskInput"
@@ -9,23 +9,15 @@ const Add = (props) => {
     // Constants
     /////////////////////////
 
-    const [workflow, setWorkflow] = useState("task")
-
-
-
-    const {userId} = props
+    const {userId, addSettings, url, setModalShow, getData} = props
 
     /////////////////////////
     // Functions
     /////////////////////////
 
     const handleWorkflow = (event) => {
-      setWorkflow(event.target.name)
+      props.setAddSettings(addSettings.taskCycle, event.target.name)
     }
-
-
-
-
 
     function MyVerticallyCenteredModal(props) {
 
@@ -45,25 +37,33 @@ const Add = (props) => {
               <div>
                 <button
                   name="task"
-                  onClick={handleWorkflow}
+                  onClick={() => handleWorkflow()}
                 >Task</button>
                 <button
                   name="event"
-                  onClick={handleWorkflow}
+                  onClick={() => handleWorkflow()}
                 >Event</button>
               </div>
               <div
-                className={ workflow === "task" ? "task-add" : "hidden task-add"}
+                className={ addSettings.category === "task" ? "task-add" : "hidden task-add"}
               >
                 <AddTaskInput
                   userId={userId}
+                  addSettings={addSettings}
+                  url={url}
+                  setModalShow={setModalShow}
+                  getData={getData}
                 />
               </div>
               <div
-                className={ workflow === "event" ? "event-add" : "event-add hidden"}
+                className={ addSettings.category === "event" ? "event-add" : "event-add hidden"}
               >
                 <AddEventInput
-                  userId={userId}  
+                  userId={userId}
+                  url={url}
+                  setModalShow={setModalShow}
+                  getData={getData}
+                  addSettings={addSettings}
                 />
               </div>
             </Modal.Body>
@@ -77,14 +77,24 @@ const Add = (props) => {
     // Render
     /////////////////////////
 
-    return (
-      <>
-        <MyVerticallyCenteredModal
-          show={props.modalShow}
-          onHide={() => props.setModalShow(false)}
-        />
-      </>
-    )
+    const loaded = () => {
+      return (
+        <>
+          <MyVerticallyCenteredModal
+            show={props.modalShow}
+            onHide={() => props.setModalShow(false)}
+          />
+        </>
+      )
+    }
+
+    const loading = () => {
+      return (
+        <h3>Loading...</h3>
+      )
+    }
+
+    return addSettings.category !== "" ? loaded() : loading()
 }
 
 export default Add

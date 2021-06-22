@@ -1,6 +1,6 @@
 import React from "react"
-import Moment from "react-moment"
 import moment from "moment"
+
 
 const HomeTodayTasks = (props) => {
 
@@ -28,6 +28,11 @@ const HomeTodayTasks = (props) => {
     // Functions
     /////////////////////////
 
+    const handleAdd = () => {
+        props.handleAddSettings("day", "task")
+        props.handleAdd()
+    }
+
     /////////////////////////
     // Render
     /////////////////////////
@@ -36,7 +41,9 @@ const HomeTodayTasks = (props) => {
         <>
             <div>
                 <p>Tasks</p>
-                <button>+</button>
+                <button
+                    onClick={() => handleAdd()}
+                >+</button>
             </div>
             <div className="today-tasks-cont">
                 {taskList}
