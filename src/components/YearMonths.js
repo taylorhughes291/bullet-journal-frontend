@@ -68,7 +68,7 @@ const YearMonth = (props) => {
         })
         
         months.push(
-            <div className="year-month-cont">
+            <div className="year-month-cont" key={`div-${i}`}>
                 <div className="year-month-headline-cont">
                     <p>{month.format('MMMM YYYY')}</p>
                     <button

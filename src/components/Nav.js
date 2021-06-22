@@ -23,7 +23,7 @@ const Nav = (props) => {
                         <Link
                             to="/home"
                         >
-                            <i className="fas fa-home fa-2x"></i>
+                            <i className="fas fa-calendar-day fa-2x"></i>
                             <li>Today</li>
                         </Link>
                     </div>
@@ -31,7 +31,7 @@ const Nav = (props) => {
                         <Link
                             to="/week"
                         >
-                            <i className="fas fa-wallet fa-2x"></i>
+                            <i className="fas fa-calendar-week fa-2x"></i>
                             <li>Week</li>
                         </Link>
                     </div>
@@ -47,7 +47,7 @@ const Nav = (props) => {
                         <Link
                             to="/month"
                         >
-                            <i className="fas fa-bars fa-2x"></i>
+                            <i className="far fa-calendar-alt fa-2x"></i>
                             <li>Month</li>
                         </Link>
                     </div>
@@ -55,7 +55,7 @@ const Nav = (props) => {
                         <Link
                             to="/year"
                         >
-                            <i className="fas fa-coins fa-2x"></i>
+                            <i className="fas fa-running fa-2x"></i>
                             <li>Year</li>
                         </Link>
                     </div>
