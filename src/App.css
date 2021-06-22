@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Tera&family=Oswald&display=swap');
+
 .App {
   text-align: center;
 }
@@ -35,4 +37,545 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.hidden {
+  display: none !important;
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  margin: 0 !important;
+}
+
+button {
+  height: 25px;
+  vertical-align: middle;
+  padding-top: 0;
+  padding-bottom: 0;
+  text-decoration: none !important;
+  color: white;
+  font-weight: bold;
+  background-color: black;
+  font-family: 'Lexend Tera', sans-serif !important;
+  text-transform: uppercase !important;
+  border: none;
+  border-radius: 3px !important;
+}
+
+button.small {
+  font-size: 10px;
+  height: 20px;
+  padding: 5px;
+}
+
+.selected {
+  background: black;
+  color: white;
+}
+
+/* ~~~~~~~~~~ NAV ~~~~~~~~~~~ */
+nav {
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color:rgba(0,0,0,);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 21;
+  cursor: pointer;
+  background-color: white;
+  height: 55px;
+  display: flex !important;
+  align-items: center;
+}
+
+div.non-nav{
+  margin: 0 0 65px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 !important;
+  width: 100%;
+  margin: 0;
+}
+
+nav ul a {
+  list-style: none;
+  text-decoration: none;
+  text-transform: none;
+  color: #949FB4
+}
+
+nav ul a:hover {
+  text-transform: none;
+  text-decoration: none;
+  color: black;
+}
+
+nav div.nav-item-cont {
+  width: 19%;
+  font-size: 10px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+nav div.nav-item-cont:nth-of-type(3) {
+  width: 12%;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 5px;
+}
+
+nav div.plus-cont {
+  border: 2px solid;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background-color: black;
+  color: white;
+}
+
+nav div.plus-cont li {
+  vertical-align: middle;
+  padding: 0 0 3px;
+}
+
+nav ul i {
+  margin: 0 0 4px;
+}
+
+
+
+header {
+  width: 85%;
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 15px 0 0;
+}
+
+/* ~~~~~~~~~ LOGIN ~~~~~~~~~ */
+div.login-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 50px 0 0;
+}
+
+div.login-cont img {
+  width: 90%;
+  height: auto
+}
+
+div.login-cont form, div.create-cont form {
+  margin: 40px 0 30px;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+div.login-cont input, div.create-cont form input {
+  margin: 20px 0 0;
+  width: 100%;
+}
+
+div.login-cont input:last-of-type, div.create-cont form input:last-of-type {
+  border: 2px solid black;
+  border-radius: 3px;
+  border-radius: 3px;
+  font-family: 'Lexend Tera', sans-serif;
+}
+
+/* ~~~~~~~~ CREATE ~~~~~~~~~~ */
+
+div.create-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0 0;
+}
+
+div.create-cont div.back-logo-cont {
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+img.small-logo {
+  width: 125px;
+  height: auto;
+}
+
+div.create-cont h2 {
+  margin: 40px 0 0;
+  font-family: 'Lexend Tera', sans-serif;
+}
+
+div.create-cont a {
+  color: black;
+}
+
+/* ~~~~~~~~ HOME ~~~~~~~~ */
+
+div.home-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 98%;
+  margin: 0 auto;
+}
+
+div.home-cont div.today-cont, div.home-cont div.home-week  {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 98%;
+  border: 2px solid black;
+  border-radius: 3px;
+  margin: 10px 0 0;
+}
+
+div.home-cont div.today-cont div.today-headline-cont, div.home-cont div.home-week div.week-headline-cont {
+  display: flex;
+  justify-content: space-between;
+  width: 98%;
+  align-items: center;
+  margin: 3px 0;
+  font-family: 'Lexend Tera', sans-serif !important;
+  text-transform: uppercase !important;
+  font-weight: bold;
+}
+
+div.home-cont div.today-cont div.home-today-events-cont, div.home-cont div.today-cont div.home-today-tasks-cont, div.home-cont div.home-week div.home-week-tasks-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 95%;
+  border: 2px solid black;
+  border-radius: 3px;
+  margin-bottom: 8px;
+}
+
+div.home-cont div.today-cont div.home-today-events-cont div.events-add-cont, div.home-cont div.headline, div.week div.headline {
+  display: flex;
+  width: 98%;
+  justify-content: space-between;
+  text-decoration: underline;
+  margin: 3px 0;
+  font-family: 'Lexend Tera', sans-serif !important;
+  text-transform: uppercase !important;
+}
+
+div.home-cont div.today-cont div.home-today-events-cont div.today-events-cont, div.home-cont div.today-tasks-cont, div.week div.items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+div.home-cont div.today-cont div.home-today-events-cont div.today-events-cont div.today-event-cont, div.home-cont div.today-tasks-cont div.today-task-cont, div.week div.item {
+  width: 98%;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  align-items: center;
+}
+
+
+/* ~~~~~~~~~~~ WEEK ~~~~~~~~~~ */
+div.week {
+  padding: 10px 0 0;
+}
+
+div.week div.weekdays {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+}
+
+div.week div.weekday {
+  border: 2px solid black;
+  border-radius: 3px;
+  width: 14.3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 0 !important;
+  border: 1px solid black;
+  font-family: 'Lexend Tera', sans-serif !important;
+  text-transform: uppercase !important;
+  font-size: 13px;
+}
+
+div.week div.week-content {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  
+}
+
+div.week div.events-tasks-buttons-cont, div.month div.events-tasks-buttons-cont {
+  display: flex;
+  width: 100%;
+  grid-gap: 5px;
+}
+
+div.week div.events-tasks-buttons-cont div {
+  width: 50%;
+  border: 2px solid black;
+  border-radius: 3px;
+  margin: 10px 0;
+  font-family: 'Lexend Tera', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+div.week div.top-level-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  border: 2px solid black;
+  border-radius: 3px;
+  margin-bottom: 8px;
+}
+
+div.week div.item {
+  overflow: hidden;
+}
+
+/* ~~~~~~~~~~ MONTH ~~~~~~~~~~~ */
+div.month {
+  padding: 15px 0 0;
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  align-items: center;
+  margin: 0 auto;
+}
+
+div.month div.headline {
+  align-self: flex-start;
+}
+
+div.month div.events-tasks-buttons-cont {
+  display: flex;
+  width: 100%;
+}
+
+div.month div.events-tasks-buttons-cont div {
+  width: 50%;
+  border: 2px solid black;
+  border-radius: 3px;
+  margin: 10px 0;
+}
+
+div.month div.calendar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 98%;
+}
+
+div.month div.calendar div.date {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 98%;
+  margin-bottom: 4px;;
+}
+
+div.month div.date-value-cont {
+  display: flex;
+  justify-content: space-between;
+  width: 53px;
+}
+
+div.month div.day-of-week {
+  width: 35px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+div.month div.complete-date {
+  display: flex;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+div.month p.content {
+  margin: 0 0 0 10px !important;
+}
+
+div.month div.week-tasks-cont {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+div.month div.day-task-cont {
+  width: 98%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 5px;
+}
+
+div.month h5, div.month h2, div.modal-body h5 {
+  font-family: 'Lexend Tera', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* ~~~~~~~~~~ YEAR ~~~~~~~~~~~~ */
+div.year {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px auto;
+}
+
+div.year div.year-month-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 95%;
+  border: 2px solid black;
+  border-radius: 3px;
+  margin: 10px 0;
+}
+
+div.year div.year-month-headline-cont {
+  display: flex;
+  justify-content: space-between;
+  width: 98%;
+  text-decoration: underline;
+  margin: 5px 0;
+  font-family: 'Lexend Tera', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+div.year div.date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100px;
+}
+
+div.year ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  width: 98%;
+}
+
+div.year ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+p {
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* number of lines to show */
+  -webkit-box-orient: vertical;
+  text-align: left;
+}
+
+/* ~~~~~~~~~~~ ADD ~~~~~~~~~~ */
+div.modal-header {
+  font-family: 'Lexend Tera', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+div.modal-body div.events-tasks-buttons-cont {
+  display: flex;
+  width: 100%;
+  grid-gap: 5px;
+}
+
+div.modal-body {
+  display: flex;
+  width: 95%;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+div.modal-content {
+  display: flex;
+  width: 95%;
+  flex-direction: column;
+  align-items: center;
+}
+
+div.modal-body div.events-tasks-buttons-cont div {
+  width: 50%;
+  border: 2px solid black;
+  border-radius: 3px;
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  grid-gap: 5px;
+}
+
+div.task-add, div.event-add {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+div.modal-body form {
+  margin: 0 0 30px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+div.modal-body input{
+  margin: 20px 0 0;
+  width: 100%;
+}
+
+div.modal-body form input.submit {
+  border: 2px solid black;
+  border-radius: 3px;
+  border-radius: 3px;
+  font-family: 'Lexend Tera', sans-serif;
+  text-transform: uppercase;
 }
