@@ -35,7 +35,7 @@ const WeekTasks = (props) => {
                     onClick={() => props.handleComplete(item.pk)}
                     className={ item.fields.isComplete ? "task-name strike" : "task-name" }
                 >{item.fields.name}</p>
-                <p>...</p>
+                <button className="small"><i class="fas fa-ellipsis-h"></i></button>
             </div>
         )
     })

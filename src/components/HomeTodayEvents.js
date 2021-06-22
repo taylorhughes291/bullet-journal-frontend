@@ -19,7 +19,7 @@ const HomeTodayEvents = (props) => {
         return (
             <div className="today-event-cont" key={index}>
                 <p><Moment format="h:mm A" utc >{item.fields.startDate}</Moment> - <Moment format="h:mm A" utc >{item.fields.endDate}</Moment>: {item.fields.name}</p>
-                <p>...</p>
+                <button className="small"><i class="fas fa-ellipsis-h"></i></button>
             </div>
         )
     })

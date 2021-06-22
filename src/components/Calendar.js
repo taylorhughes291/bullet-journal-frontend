@@ -44,7 +44,7 @@ const Calendar = (props) => {
                 </div>
                 <button
                     onClick={() => handleAdd(day)}
-                >...</button>
+                ><i class="fas fa-ellipsis-h"></i></button>
             </div>
         )
     }

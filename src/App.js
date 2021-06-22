@@ -17,7 +17,7 @@ function App(props) {
   // Constants
   /////////////////////////
 
-  const [userId, setUserId] = useState("8")
+  const [userId, setUserId] = useState("")
   const [date, setDate] = useState("")
   const [tasks, setTasks] = useState([{
     fields: {
@@ -147,12 +147,12 @@ function App(props) {
   useEffect(() => {
     getData(userId)
     setDate(new Date())
-  }, [])
+  }, [userId])
 
   return (
     <div className="App">
       <div className="non-nav">
-        <header>
+        <header className={props.location.pathname === "/login" || props.location.pathname === "/create" ? "hidden" : ""}>
             <img src={smallLogo} className="small-logo" alt="small logo" />
             <i class="fas fa-bars fa-2x"></i>
         </header>

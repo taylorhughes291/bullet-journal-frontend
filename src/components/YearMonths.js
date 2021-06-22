@@ -48,7 +48,7 @@ const YearMonth = (props) => {
         
         const monthEventsRender = monthEvents.map((item, index) => {
             return (
-                <li key={index} ><p>{moment(item.fields.startDate).format('M/DD')} - {moment(item.fields.endDate).format('M/DD')}: {item.fields.name}</p><button>...</button></li>
+                <li key={index} ><p>{moment(item.fields.startDate).format('M/DD')} - {moment(item.fields.endDate).format('M/DD')}: {item.fields.name}</p><button className="small"><i class="fas fa-ellipsis-h"></i></button></li>
             )
         })
 
@@ -63,7 +63,7 @@ const YearMonth = (props) => {
                 <li 
                     key={index}
                     onClick={() => handleComplete(item.pk)}
-                ><p>{item.fields.name}</p><button>...</button></li>
+                ><p>{item.fields.name}</p><button className="small"><i class="fas fa-ellipsis-h"></i></button></li>
             )
         })
         

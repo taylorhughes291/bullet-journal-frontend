@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Tera&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Tera&family=Oswald&display=swap');
 
 .App {
   text-align: center;
@@ -40,7 +40,7 @@
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .strike {
@@ -56,10 +56,25 @@ button {
   vertical-align: middle;
   padding-top: 0;
   padding-bottom: 0;
+  text-decoration: none !important;
+  color: white;
+  font-weight: bold;
+  background-color: black;
+  font-family: 'Lexend Tera', sans-serif !important;
+  text-transform: uppercase !important;
+  border: none;
+  border-radius: 3px !important;
+}
+
+button.small {
+  font-size: 10px;
+  height: 20px;
+  padding: 5px;
 }
 
 .selected {
-  background: red;
+  background: black;
+  color: white;
 }
 
 /* ~~~~~~~~~~ NAV ~~~~~~~~~~~ */
@@ -125,7 +140,8 @@ nav div.nav-item-cont:nth-of-type(3) {
 }
 
 nav div.plus-cont {
-  border: 1px solid;
+  border: 2px solid;
+  border-radius: 3px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -183,7 +199,8 @@ div.login-cont input, div.create-cont form input {
 }
 
 div.login-cont input:last-of-type, div.create-cont form input:last-of-type {
-  border: 3px solid black;
+  border: 2px solid black;
+  border-radius: 3px;
   border-radius: 3px;
   font-family: 'Lexend Tera', sans-serif;
 }
@@ -235,7 +252,8 @@ div.home-cont div.today-cont, div.home-cont div.home-week  {
   align-items: center;
   justify-content: flex-start;
   width: 98%;
-  border: 1px solid black;
+  border: 2px solid black;
+  border-radius: 3px;
   margin: 10px 0 0;
 }
 
@@ -244,6 +262,10 @@ div.home-cont div.today-cont div.today-headline-cont, div.home-cont div.home-wee
   justify-content: space-between;
   width: 98%;
   align-items: center;
+  margin: 3px 0;
+  font-family: 'Lexend Tera', sans-serif !important;
+  text-transform: uppercase !important;
+  font-weight: bold;
 }
 
 div.home-cont div.today-cont div.home-today-events-cont, div.home-cont div.today-cont div.home-today-tasks-cont, div.home-cont div.home-week div.home-week-tasks-cont {
@@ -251,7 +273,8 @@ div.home-cont div.today-cont div.home-today-events-cont, div.home-cont div.today
   flex-direction: column;
   align-items: center;
   width: 95%;
-  border: 1px solid black;
+  border: 2px solid black;
+  border-radius: 3px;
   margin-bottom: 8px;
 }
 
@@ -260,6 +283,9 @@ div.home-cont div.today-cont div.home-today-events-cont div.events-add-cont, div
   width: 98%;
   justify-content: space-between;
   text-decoration: underline;
+  margin: 3px 0;
+  font-family: 'Lexend Tera', sans-serif !important;
+  text-transform: uppercase !important;
 }
 
 div.home-cont div.today-cont div.home-today-events-cont div.today-events-cont, div.home-cont div.today-tasks-cont, div.week div.items {
@@ -274,7 +300,9 @@ div.home-cont div.today-cont div.home-today-events-cont div.today-events-cont di
   display: flex;
   justify-content: space-between;
   overflow: hidden;
+  align-items: center;
 }
+
 
 /* ~~~~~~~~~~~ WEEK ~~~~~~~~~~ */
 div.week {
@@ -285,15 +313,22 @@ div.week div.weekdays {
   display: flex;
   justify-content: space-between;
   width: 100%;
+
 }
 
 div.week div.weekday {
-  border: 1px solid black;
+  border: 2px solid black;
+  border-radius: 3px;
   width: 14.3%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  border-radius: 0 !important;
+  border: 1px solid black;
+  font-family: 'Lexend Tera', sans-serif !important;
+  text-transform: uppercase !important;
+  font-size: 13px;
 }
 
 div.week div.week-content {
@@ -302,17 +337,23 @@ div.week div.week-content {
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
+  
 }
 
-div.week div.events-tasks-buttons-cont {
+div.week div.events-tasks-buttons-cont, div.month div.events-tasks-buttons-cont {
   display: flex;
   width: 100%;
+  grid-gap: 5px;
 }
 
 div.week div.events-tasks-buttons-cont div {
   width: 50%;
-  border: 1px solid black;
+  border: 2px solid black;
+  border-radius: 3px;
   margin: 10px 0;
+  font-family: 'Lexend Tera', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 div.week div.top-level-cont {
@@ -320,7 +361,8 @@ div.week div.top-level-cont {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  border: 1px solid black;
+  border: 2px solid black;
+  border-radius: 3px;
   margin-bottom: 8px;
 }
 
@@ -349,7 +391,8 @@ div.month div.events-tasks-buttons-cont {
 
 div.month div.events-tasks-buttons-cont div {
   width: 50%;
-  border: 1px solid black;
+  border: 2px solid black;
+  border-radius: 3px;
   margin: 10px 0;
 }
 
@@ -403,14 +446,18 @@ div.month div.day-task-cont {
   margin: 0 0 5px;
 }
 
+div.month h5, div.month h2 {
+  font-family: 'Lexend Tera', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
 /* ~~~~~~~~~~ YEAR ~~~~~~~~~~~~ */
 div.year {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 15px auto;
-  width: 98%;
-  border: 1px solid black;
 }
 
 div.year div.year-month-cont {
@@ -418,7 +465,8 @@ div.year div.year-month-cont {
   flex-direction: column;
   align-items: center;
   width: 95%;
-  border: 1px solid black;
+  border: 2px solid black;
+  border-radius: 3px;
   margin: 10px 0;
 }
 
@@ -427,6 +475,10 @@ div.year div.year-month-headline-cont {
   justify-content: space-between;
   width: 98%;
   text-decoration: underline;
+  margin: 5px 0;
+  font-family: 'Lexend Tera', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 div.year div.date {
@@ -448,6 +500,7 @@ div.year ul {
 div.year ul li {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   max-width: 100%;
   overflow: hidden;

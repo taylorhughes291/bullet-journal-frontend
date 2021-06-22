@@ -19,7 +19,7 @@ const HomeTodayTasks = (props) => {
         return (
             <div className="today-task-cont" key={index}>
                 <p>{item.fields.name}</p>
-                <p>...</p>
+                <button className="small"><i class="fas fa-ellipsis-h"></i></button>
             </div>
         )
     })
