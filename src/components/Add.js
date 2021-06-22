@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from "react"
-import {Modal, Button} from "react-bootstrap"
+import React, {useState} from "react"
+import {Modal} from "react-bootstrap"
 import AddEventInput from "./AddEventInput"
 import AddTaskInput from "./AddTaskInput"
 
@@ -15,10 +15,6 @@ const Add = (props) => {
     /////////////////////////
     // Functions
     /////////////////////////
-
-    const handleWorkflow = (event) => {
-      props.setAddSettings(addSettings.taskCycle, event.target.name)
-    }
 
     function MyVerticallyCenteredModal(props) {
 

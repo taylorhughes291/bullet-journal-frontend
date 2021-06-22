@@ -1,7 +1,6 @@
 import React, {useState} from "react"
 import Calendar from "../components/Calendar"
 import MonthTasks from "../components/MonthTasks"
-import Moment from "react-moment"
 import moment from "moment"
 
 const Month = (props) => {

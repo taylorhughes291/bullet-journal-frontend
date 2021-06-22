@@ -1,6 +1,5 @@
-import React, {useState} from "react"
+import React from "react"
 import moment from "moment"
-import Add from "./Add"
 
 const HomeWeekTasks = (props) => {
 
@@ -19,7 +18,7 @@ const HomeWeekTasks = (props) => {
         return (
             <div className="today-task-cont" key={index}>
                 <p>{item.fields.name}</p>
-                <button className="small"><i class="fas fa-ellipsis-h"></i></button>
+                <button className="small"><i className="fas fa-ellipsis-h"></i></button>
             </div>
         )
     })

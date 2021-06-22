@@ -17,7 +17,7 @@ function App(props) {
   // Constants
   /////////////////////////
 
-  const [userId, setUserId] = useState("")
+  const [userId, setUserId] = useState("-1")
   const [date, setDate] = useState("")
   const [tasks, setTasks] = useState([{
     fields: {
@@ -95,16 +95,16 @@ function App(props) {
     })
   }
 
-  const deleteUser = () => {
-    const deleteUrl = url + "/user/?id=" + userId
-    fetch(deleteUrl, {
-      method: "DELETE"
-    })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-    })
-  }
+  // const deleteUser = () => {
+  //   const deleteUrl = url + "/user/?id=" + userId
+  //   fetch(deleteUrl, {
+  //     method: "DELETE"
+  //   })
+  //   .then((response) => response.json())
+  //   .then((data) => {
+  //     console.log(data);
+  //   })
+  // }
 
   const deleteTask = (id) => {
     const deleteUrl = url + "/task/?id=" + id + "&user=" + userId
@@ -154,7 +154,7 @@ function App(props) {
       <div className="non-nav">
         <header className={props.location.pathname === "/login" || props.location.pathname === "/create" ? "hidden" : ""}>
             <img src={smallLogo} className="small-logo" alt="small logo" />
-            <i class="fas fa-bars fa-2x"></i>
+            <i className="fas fa-bars fa-2x"></i>
         </header>
         <Switch>
           <Route
