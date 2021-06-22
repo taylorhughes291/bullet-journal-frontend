@@ -35,7 +35,13 @@ const Calendar = (props) => {
                 className="date" 
                 key={i}
             >
-                <p>{day.format('ddd')} {i}. {headline ? headline.fields.name : ""}</p>
+                <div className="complete-date">
+                    <div className="date-value-cont">
+                        <div className="day-of-week"><p>{day.format('dd')} </p></div>
+                        <p> {i}. </p>
+                    </div>
+                    <p className="content">{headline ? headline.fields.name : ""}</p>
+                </div>
                 <button
                     onClick={() => handleAdd(day)}
                 >...</button>
@@ -45,9 +51,9 @@ const Calendar = (props) => {
 
 
     return (
-        <>
+        <div className="calendar">
             {dates}
-        </>
+        </div>
     )
 }
 

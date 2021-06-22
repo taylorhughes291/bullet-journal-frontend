@@ -16,11 +16,7 @@ const Year = (props) => {
     /////////////////////////
 
     return (
-        <>
-            <div>
-                <img src="https://placeimg.com/100/50/any" alt="small logo" />
-                <img src="https://placeimg.com/50/50/any" alt="hamburger options menu" />
-            </div>
+        <div className="year">
             <YearMonths 
                 tasks={props.tasks}
                 events={props.events}
@@ -32,7 +28,7 @@ const Year = (props) => {
                 handleAdd={props.handleAdd}
                 handleAddSettings={props.handleAddSettings}
             />
-        </>
+        </div>
     )
 }
 

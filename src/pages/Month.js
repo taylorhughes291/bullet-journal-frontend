@@ -15,6 +15,8 @@ const Month = (props) => {
     const monthStart = month.clone().startOf('month')
     const [selectedDate, setSelectedDate] = useState("")
 
+    const [selectedView, setSelectedView] = useState("calendar")
+
 
     /////////////////////////
     // Functions
@@ -26,18 +28,24 @@ const Month = (props) => {
 
     return (
         <div className="month">
-            <div className="headline-next-cont">
+            <div className="headline">
                 <h2>{month.format('MMMM YYYY')}</h2>
             </div>
             <div className="events-tasks-buttons-cont">
-                <div>
+                <div
+                    onClick={() => setSelectedView("calendar")}
+                    className={selectedView === "calendar" ? "selected" : "" }
+                >
                     <h5>Calendar</h5>
                 </div>
-                <div>
+                <div
+                    onClick={() => setSelectedView("tasks")}
+                    className={selectedView === "tasks" ? "selected" : "" }
+                >
                     <h5>Tasks</h5>
                 </div>
             </div>
-            <Calendar 
+            {selectedView === "calendar" && <Calendar 
                 events={props.events}
                 updateEvents={props.Events}
                 deleteEvents={props.deleteEvents}
@@ -48,8 +56,8 @@ const Month = (props) => {
                 handleAdd={props.handleAdd}
                 selectedDate={selectedDate}
                 setSelectedDate={setSelectedDate}
-            />
-            <MonthTasks 
+            />}
+            {selectedView === "tasks" && <MonthTasks 
                 tasks={props.tasks}
                 updateTask={props.updateTask}
                 deleteTask={props.deleteTask}
@@ -58,7 +66,7 @@ const Month = (props) => {
                 date={props.date}
                 handleAddSettings={props.handleAddSettings}
                 handleAdd={props.handleAdd}
-            />
+            />}
         </div>
     )
 }

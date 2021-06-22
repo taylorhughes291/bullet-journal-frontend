@@ -11,6 +11,11 @@ const Nav = (props) => {
     // Functions
     /////////////////////////
 
+    const handleAdd = () => {
+        props.handleAddSettings("day", "task", new Date())
+        props.handleAdd()
+    }
+
     /////////////////////////
     // Render
     /////////////////////////
@@ -37,7 +42,7 @@ const Nav = (props) => {
                     </div>
                     <div 
                         className="nav-item-cont"
-                        onClick={() => props.handleAdd()}
+                        onClick={() => handleAdd()}
                     >
                         <div className="plus-cont">
                             <li>+</li>

@@ -17,7 +17,7 @@ function App(props) {
   // Constants
   /////////////////////////
 
-  const [userId, setUserId] = useState("")
+  const [userId, setUserId] = useState("8")
   const [date, setDate] = useState("")
   const [tasks, setTasks] = useState([{
     fields: {
@@ -256,6 +256,7 @@ function App(props) {
       <div className={props.location.pathname === "/login" || props.location.pathname === "/create" ? "hidden" : ""} >
         <Nav 
           handleAdd={handleAdd}
+          handleAddSettings={handleAddSettings}
         />
       </div>
     </div>

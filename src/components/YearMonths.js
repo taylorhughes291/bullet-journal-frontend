@@ -87,9 +87,7 @@ const YearMonth = (props) => {
 
     return (
         <>
-            <div className="year-months-cont">
-                {months}
-            </div>
+            {months}
         </>
     )
 }
