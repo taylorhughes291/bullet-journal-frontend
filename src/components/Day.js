@@ -33,12 +33,16 @@ const Day = (props) => {
                 updateTask={props.updateTask}
                 deleteTask={props.deleteTask}
                 selectedDate={props.selectedDate}
+                handleAddSettings={props.handleAddSettings}
+                handleAdd={props.handleAdd}
             />
             <DayEvents 
                 events={props.events}
                 updateEvent={props.updateEvent}
                 deleteEvent={props.deleteEvent}
                 selectedDate={props.selectedDate}
+                handleAddSettings={props.handleAddSettings}
+                handleAdd={props.handleAdd}
             />
         </>
     )

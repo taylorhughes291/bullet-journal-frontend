@@ -29,6 +29,11 @@ const DayEvents = (props) => {
     // Functions
     /////////////////////////
 
+    const handleAdd = () => {
+        props.handleAddSettings("day", "event", new Date(props.selectedDate))
+        props.handleAdd()
+    }
+
     /////////////////////////
     // Render
     /////////////////////////
@@ -37,7 +42,9 @@ const DayEvents = (props) => {
         <>
              <div className="day-events-add-cont">
                 <p>Events, {props.selectedDate.format('MM/DD/YYYY')}</p>
-                <button>+</button>
+                <button
+                    onClick={() => handleAdd()}
+                >+</button>
             </div>
             <div className="day-events-cont">
                 {eventsList}

@@ -12,7 +12,10 @@ const DayTasks = (props) => {
     // Functions
     /////////////////////////
 
-
+    const handleAdd = () => {
+        props.handleAddSettings("day", "task", new Date(props.selectedDate))
+        props.handleAdd()
+    }
 
     /////////////////////////
     // Render
@@ -41,6 +44,9 @@ const DayTasks = (props) => {
         <>
             <div className="headline-add-cont">
                 <p>Tasks, {props.selectedDate.format('MM/DD/YYYY')}</p>
+                <button
+                    onClick={() => handleAdd()}
+                >+</button>
             </div>
             <div className="day-tasks-cont">
                 {taskList}

@@ -1,10 +1,13 @@
 import React, {useState} from "react"
+import DatePicker from "react-datepicker"
+import "react-datepicker/dist/react-datepicker.css";
+import moment from "moment"
 
 const AddTaskInput = (props) => {
 
     const [taskFormData, setTaskFormData] = useState({
         name: "",
-        dueDate: props.addSettings.date
+        dueDate: new Date(props.addSettings.date)
       })
 
     const emptyForm = {
@@ -23,7 +26,7 @@ const AddTaskInput = (props) => {
         event.preventDefault()
         const body = {
             name: taskFormData.name,
-            dueDate: taskFormData.dueDate,
+            dueDate: moment(taskFormData.dueDate).format('YYYY-MM-DD'),
             userId: props.userId,
             taskCycle: {
               day: props.addSettings.taskCycle === "day" ? true : false,
@@ -47,6 +50,22 @@ const AddTaskInput = (props) => {
         })
     }
 
+    const DueDateInput = () => {
+      return (
+        <DatePicker
+          selected={taskFormData.dueDate}
+          onChange={(date) => {
+            setTaskFormData({
+              ...taskFormData,
+              dueDate: new Date(date)
+            })
+          }}
+          timeInputLabel="Time:"
+          dateFormat={"MM/dd/yyyy"}
+        />
+      );
+    };
+
 
     return (
         <div >
@@ -60,13 +79,7 @@ const AddTaskInput = (props) => {
                     value={taskFormData.name}
                     onChange={handleTaskChange}
                   ></input>
-                  <input 
-                    type="text"
-                    name="dueDate"
-                    value={taskFormData.dueDate}
-                    placeholder="Due Date"
-                    onChange={handleTaskChange}
-                  ></input>
+                  {props.addSettings.taskCycle === "day" && <DueDateInput />}
                   <input type="submit"></input>
                 </form>
               </div>

@@ -179,6 +179,8 @@ function App(props) {
             deleteTask={deleteTask}
             deleteEvent={deleteEvent}
             date={date}
+            handleAddSettings={handleAddSettings}
+            handleAdd={handleAdd}
           />
         </Route>
         <Route
@@ -193,6 +195,8 @@ function App(props) {
             deleteEvent={deleteEvent}
             modalShow={modalShow}
             setModalShow={setModalShow}
+            handleAddSettings={handleAddSettings}
+            handleAdd={handleAdd}
           />
         </Route>
         <Route
@@ -206,6 +210,8 @@ function App(props) {
             deleteTask={deleteTask}
             deleteEvent={deleteEvent}
             date={date}
+            handleAdd={handleAdd}
+            handleAddSettings={handleAddSettings}
           />
         </Route>
       </Switch>

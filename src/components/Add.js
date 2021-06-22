@@ -9,7 +9,7 @@ const Add = (props) => {
     // Constants
     /////////////////////////
 
-    const {userId, addSettings, url, setModalShow, getData} = props
+    const {userId, addSettings, url, setModalShow, getData, setAddSettings} = props
 
     /////////////////////////
     // Functions
@@ -37,11 +37,11 @@ const Add = (props) => {
               <div>
                 <button
                   name="task"
-                  onClick={() => handleWorkflow()}
+                  onClick={() => setAddSettings({...addSettings, category: "task"})}
                 >Task</button>
                 <button
                   name="event"
-                  onClick={() => handleWorkflow()}
+                  onClick={() => setAddSettings({...addSettings, category: "event"})}
                 >Event</button>
               </div>
               <div

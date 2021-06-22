@@ -29,7 +29,7 @@ const HomeWeekTasks = (props) => {
     /////////////////////////
 
     const handleAdd = () => {
-        props.handleAddSettings("week", "task")
+        props.handleAddSettings("week", "task", new Date())
         props.handleAdd()
     }
 

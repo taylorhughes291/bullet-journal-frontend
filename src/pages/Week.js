@@ -103,6 +103,8 @@ const Week = (props) => {
                 deleteEvent={props.deleteEvent}
                 selectedDate={selectedDate}
                 handleComplete={handleComplete}
+                handleAddSettings={props.handleAddSettings}
+                handleAdd={props.handleAdd}
             />
             <WeekTasks 
                 tasks={props.tasks}
@@ -112,6 +114,9 @@ const Week = (props) => {
                 handleComplete={handleComplete}
                 modalShow={props.modalShow}
                 setModalShow={props.setModalShow}
+                handleAddSettings={props.handleAddSettings}
+                handleAdd={props.handleAdd}
+                selectedDate={selectedDate}
             />
         </>
     )

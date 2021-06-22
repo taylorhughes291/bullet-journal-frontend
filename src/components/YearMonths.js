@@ -1,5 +1,4 @@
 import React from "react"
-import Moment from "react-moment"
 import moment from "moment"
 
 const YearMonth = (props) => {
@@ -27,16 +26,23 @@ const YearMonth = (props) => {
         props.updateTask(body, pk)
     }
 
+    const handleAdd = (day) => {
+        props.handleAddSettings("month", "task", new Date(day))
+        props.handleAdd()
+    }
+
     /////////////////////////
     // Render
     /////////////////////////
 
     const months = []
 
-    for (let i = 1; i <= 6; i += 1) {
+    for (let i = 1; i <= 12; i += 1) {
+        const month = todayMonth.clone().add(i - 1, 'months')
+
         const monthEvents = props.events.filter((item, index) => {
             return (
-                item.fields.dateClass === "month" && (moment(item.fields.startDate).isSameOrBefore(todayMonth.clone().add(i - 1, 'months'), 'month') && moment(item.fields.endDate).isSameOrAfter(todayMonth.clone().add(i - 1, 'months'), 'month'))
+                item.fields.dateClass === "month" && (moment(item.fields.startDate).isSameOrBefore(month, 'month') && moment(item.fields.endDate).isSameOrAfter(month, 'month'))
             )
         })
         
@@ -48,7 +54,7 @@ const YearMonth = (props) => {
 
         const monthTasks = props.tasks.filter((item, index) => {
             return (
-                !item.fields.isComplete && item.fields.taskCycle.month && moment(item.fields.dueDate).isSame(todayMonth.clone().add(i - 1, 'months'), 'month')
+                !item.fields.isComplete && item.fields.taskCycle.month && moment(item.fields.dueDate).isSame(month, 'month')
             )
         })
         
@@ -64,8 +70,10 @@ const YearMonth = (props) => {
         months.push(
             <div className="year-month-cont">
                 <div className="year-month-headline-cont">
-                    <p>{todayMonth.clone().add(i - 1, 'months').format('MMMM YYYY')}</p>
-                    <button>+</button>
+                    <p>{month.format('MMMM YYYY')}</p>
+                    <button
+                        onClick={() => handleAdd(month)}
+                    >+</button>
                 </div>
                 <div className="date" key={i}>
                     <ul>

@@ -29,7 +29,7 @@ const HomeTodayTasks = (props) => {
     /////////////////////////
 
     const handleAdd = () => {
-        props.handleAddSettings("day", "task")
+        props.handleAddSettings("day", "task", new Date())
         props.handleAdd()
     }
 

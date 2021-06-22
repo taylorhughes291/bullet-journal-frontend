@@ -29,6 +29,8 @@ const Year = (props) => {
                 deleteTask={props.deleteTask}
                 deleteEvent={props.deleteEvent}
                 date={props.date}
+                handleAdd={props.handleAdd}
+                handleAddSettings={props.handleAddSettings}
             />
         </>
     )

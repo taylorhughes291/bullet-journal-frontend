@@ -13,6 +13,11 @@ const WeekTasks = (props) => {
     // Functions
     /////////////////////////
 
+    const handleAdd = () => {
+        props.handleAddSettings("week", "task", new Date(props.selectedDate))
+        props.handleAdd()
+    }
+
     /////////////////////////
     // Render
     /////////////////////////
@@ -39,7 +44,9 @@ const WeekTasks = (props) => {
         <>
             <div className="week-headline-add-cont">
                 <p>This Week's Tasks</p>
-                <button>+</button>
+                <button
+                    onClick={() => handleAdd()}
+                >+</button>
             </div>
             <div className="week-tasks-cont">
                 {taskList}

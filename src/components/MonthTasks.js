@@ -25,6 +25,11 @@ const MonthTasks = (props) => {
         props.updateTask(body, pk)
     }
 
+    const handleAdd = () => {
+        props.handleAddSettings("month", "task", new Date())
+        props.handleAdd()
+    }
+
     /////////////////////////
     // Render
     /////////////////////////
@@ -51,7 +56,9 @@ const MonthTasks = (props) => {
         <>
             <div className="week-tasks-cont">
                 {taskList}
-                <button>Add Task</button>
+                <button
+                    onClick={handleAdd}
+                >Add Task</button>
             </div>
         </>
     )

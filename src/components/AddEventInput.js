@@ -1,7 +1,7 @@
 import React, {useState} from "react"
 import moment from "moment"
-import DatePicker from "react-datepicker"
-import "react-datepicker/dist/react-datepicker.css";
+import StartDateInput from "./StartDateInput"
+import EndDateInput from "./EndDateInput"
 
 const AddEventInput = (props) => {
 
@@ -49,41 +49,6 @@ const AddEventInput = (props) => {
         })
       }
 
-      const StartDateInput = () => {
-        return (
-          <DatePicker
-            selected={eventFormData.startDate}
-            onChange={(date) => {
-              setEventFormData({
-                ...eventFormData,
-                startDate: new Date(date)
-              })
-            }}
-            timeInputLabel="Time:"
-            dateFormat="MM/dd/yyyy h:mm aa"
-            showTimeInput
-          />
-        );
-      };
-
-      const EndDateInput = () => {
-        return (
-          <DatePicker
-            selected={eventFormData.endDate}
-            onChange={(date) => {
-              setEventFormData({
-                ...eventFormData,
-                endDate: new Date(date)
-              })
-            }}
-            timeInputLabel="Time:"
-            dateFormat="MM/dd/yyyy h:mm aa"
-            showTimeInput
-            minDate={eventFormData.startDate}
-          />
-        );
-      };
-
     return (
         <div >
                 <form
@@ -96,8 +61,14 @@ const AddEventInput = (props) => {
                     onChange={handleEventChange}
                     value={eventFormData.name}
                   ></input>
-                  <StartDateInput />
-                  <EndDateInput />
+                  <StartDateInput 
+                    eventFormData={eventFormData}
+                    setEventFormData={setEventFormData}
+                  />
+                  <EndDateInput 
+                    eventFormData={eventFormData}
+                    setEventFormData={setEventFormData}
+                  />
                   <input type="submit"></input>
                 </form>
               </div>
