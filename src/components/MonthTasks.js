@@ -1,5 +1,4 @@
 import React from "react"
-import Moment from "react-moment"
 import moment from "moment"
 
 const MonthTasks = (props) => {
@@ -47,7 +46,7 @@ const MonthTasks = (props) => {
                     onClick={() => handleComplete(item.pk)}
                     className={ item.fields.isComplete ? "task-name strike" : "task-name" }
                 >{item.fields.name}</p>
-                <button className="small"><i class="fas fa-ellipsis-h"></i></button>
+                <button className="small"><i className="fas fa-ellipsis-h"></i></button>
             </div>
         )
     })

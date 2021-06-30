@@ -27,7 +27,6 @@ const Login = (props) => {
     const handleLogin = (event) => {
         event.preventDefault()
         const getUrl = props.url + "/user/?email=" + login.email + "&password=" + login.password
-        console.log(getUrl);
         fetch(getUrl)
         .then((response) => response.json())
         .then((data) => {

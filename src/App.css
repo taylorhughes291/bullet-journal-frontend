@@ -77,6 +77,10 @@ button.small {
   color: white;
 }
 
+.task-name, div.weekday, div.selector {
+  cursor: pointer;
+}
+
 /* ~~~~~~~~~~ NAV ~~~~~~~~~~~ */
 nav {
   width: 100%;

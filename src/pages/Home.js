@@ -8,7 +8,7 @@ const Home = (props) => {
     // Constants
     /////////////////////////
 
-    const {tasks, events, updateTask, updateEvent, deleteTask, deleteEvent, date, setDate} = props
+    const {tasks, events, updateTask, updateEvent, deleteTask, deleteEvent, date} = props
 
     /////////////////////////
     // Functions
@@ -34,6 +34,7 @@ const Home = (props) => {
                 />
                 <HomeWeek 
                     tasks={tasks}
+                    updateTask={updateTask}
                     date={date}
                     handleAdd={props.handleAdd}
                     modalShow={props.modalShow}
