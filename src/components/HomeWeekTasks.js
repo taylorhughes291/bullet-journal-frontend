@@ -14,14 +14,6 @@ const HomeWeekTasks = (props) => {
         )
     })
 
-    const taskList = weekTasks.map((item, index) => {
-        return (
-            <div className="today-task-cont" key={index}>
-                <p>{item.fields.name}</p>
-                <button className="small"><i className="fas fa-ellipsis-h"></i></button>
-            </div>
-        )
-    })
 
     /////////////////////////
     // Functions
@@ -32,9 +24,36 @@ const HomeWeekTasks = (props) => {
         props.handleAdd()
     }
 
+
+    const handleComplete = (pk) => {
+        const selectedTask = props.tasks.find((item, index) => {
+            return (
+                item.pk === pk
+            )
+        })
+        const body = {
+            ...selectedTask.fields,
+            isComplete: !selectedTask.fields.isComplete
+        }
+        props.updateTask(body, pk)
+    }
+
     /////////////////////////
     // Render
     /////////////////////////
+
+
+    const taskList = weekTasks.map((item, index) => {
+        return (
+            <div className="today-task-cont" key={index}>
+                <p
+                    onClick={() => handleComplete(item.pk)}
+                    className={ item.fields.isComplete ? "task-name strike" : "task-name" }
+                >{item.fields.name}</p>
+                <button className="small"><i className="fas fa-ellipsis-h"></i></button>
+            </div>
+        )
+    })
 
     return (
         <div className="home-week-tasks-cont"> 
