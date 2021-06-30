@@ -34,6 +34,7 @@ const Home = (props) => {
                 />
                 <HomeWeek 
                     tasks={tasks}
+                    updateTask={updateTask}
                     date={date}
                     handleAdd={props.handleAdd}
                     modalShow={props.modalShow}

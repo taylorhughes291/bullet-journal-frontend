@@ -21,14 +21,14 @@ const Day = (props) => {
     return (
         <>
             <div className="events-tasks-buttons-cont">
-                <div 
-                    className={selectedView === "events" ? "selected" : ""}
+                <div
+                    className={selectedView === "events" ? "selected selector" : "selector"}
                     onClick={() => setSelectedView("events")}
                 >
                     <h5>Events</h5>
                 </div>
                 <div 
-                    className={selectedView === "tasks" ? "selected" : ""}
+                    className={selectedView === "tasks" ? "selected selector" : "selector"}
                     onClick={() => setSelectedView("tasks")}
                 >
                     <h5>Tasks</h5>

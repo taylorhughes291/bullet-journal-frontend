@@ -33,13 +33,13 @@ const Month = (props) => {
             <div className="events-tasks-buttons-cont">
                 <div
                     onClick={() => setSelectedView("calendar")}
-                    className={selectedView === "calendar" ? "selected" : "" }
+                    className={selectedView === "calendar" ? "selected selector" : "selector" }
                 >
                     <h5>Calendar</h5>
                 </div>
                 <div
                     onClick={() => setSelectedView("tasks")}
-                    className={selectedView === "tasks" ? "selected" : "" }
+                    className={selectedView === "tasks" ? "selected selector" : "selector" }
                 >
                     <h5>Tasks</h5>
                 </div>
