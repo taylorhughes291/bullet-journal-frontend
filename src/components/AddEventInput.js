@@ -1,7 +1,8 @@
-import React, {useState} from "react"
+import React, {useState, useContext} from "react"
 import moment from "moment"
 import StartDateInput from "./StartDateInput"
 import EndDateInput from "./EndDateInput"
+import {GlobalCtx} from "../App"
 
 const AddEventInput = (props) => {
 
@@ -16,6 +17,7 @@ const AddEventInput = (props) => {
         startDate: "",
         endDate: ""
       }
+      const {gState, setGState} = useContext(GlobalCtx)
 
       const handleEventChange = (event) => {
         setEventFormData({
@@ -37,7 +39,8 @@ const AddEventInput = (props) => {
         fetch(postUrl, {
           method: "POST",
           headers: {
-              "Content-Type": "application/json"
+              "Content-Type": "application/json",
+              "Authorization": `bearer ${gState.token}`
           },
           body: JSON.stringify(body)
         })

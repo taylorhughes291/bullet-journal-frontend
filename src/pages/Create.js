@@ -1,6 +1,7 @@
-import React, {useState} from "react"
+import React, {useState, useContext} from "react"
 import {withRouter, Link} from "react-router-dom"
 import smallLogo from "../assets/city-journal-small.png"
+import {GlobalCtx} from "../App"
 
 const Create = (props) => {
 
@@ -14,6 +15,8 @@ const Create = (props) => {
         phone: "",
         password: ""
     })
+
+    const {gState, setGState} = useContext(GlobalCtx)
 
     /////////////////////////
     // Functions
@@ -39,6 +42,11 @@ const Create = (props) => {
         .then((response) => response.json())
         .then((data) => {
             if (data.status === 200) {
+                window.localStorage.setItem("token", JSON.stringify(data.token))
+                setGState({
+                    ...gState,
+                    token: data.token
+                })
                 props.setUserId(data.data[0].pk)
                 props.setDate(new Date())
                 props.history.push("/home")

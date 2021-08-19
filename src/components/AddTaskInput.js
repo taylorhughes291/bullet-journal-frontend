@@ -1,7 +1,8 @@
-import React, {useState} from "react"
+import React, {useState, useContext} from "react"
 import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css";
 import moment from "moment"
+import {GlobalCtx} from "../App"
 
 const AddTaskInput = (props) => {
 
@@ -9,6 +10,8 @@ const AddTaskInput = (props) => {
         name: "",
         dueDate: new Date(props.addSettings.date)
       })
+
+    const {gState, setGState} = useContext(GlobalCtx)
 
     const emptyForm = {
       name: "",
@@ -38,7 +41,8 @@ const AddTaskInput = (props) => {
         fetch(postUrl, {
           method: "POST",
           headers: {
-              "Content-Type": "application/json"
+              "Content-Type": "application/json",
+              "Authorization": `bearer ${gState.token}`
           },
           body: JSON.stringify(body)
         })
