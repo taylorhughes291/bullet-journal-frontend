@@ -40,7 +40,7 @@ const WeekTasks = (props) => {
     })
 
     return (
-        <div className="top-level-cont">
+        <div className="top-level-cont week-tasks">
             <div className="headline">
                 <p>This Week's Tasks</p>
                 <button
