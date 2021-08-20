@@ -98,7 +98,7 @@ const Create = (props) => {
                 <input
                     placeholder="Password"
                     name="password"
-                    input="text"
+                    input="password"
                     value={form.password}
                     onChange={handleChange}
                 ></input>
