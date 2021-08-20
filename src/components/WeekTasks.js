@@ -28,11 +28,19 @@ const WeekTasks = (props) => {
     })
 
     const taskList = weekTasks.map((item, index) => {
+        const isLate = item.fields.dueDate === item.fields.originalDate ? false : true
+        let className = "task-name"
+        if (item.fields.isComplete) {
+            className += " strike"
+        }
+        if (isLate) {
+            className += " late"
+        }
         return (
             <div className="item" key={index}>
                 <p
                     onClick={() => props.handleComplete(item.pk)}
-                    className={ item.fields.isComplete ? "task-name strike" : "task-name" }
+                    className={className}
                 >{item.fields.name}</p>
                 <button className="small"><i className="fas fa-ellipsis-h"></i></button>
             </div>
